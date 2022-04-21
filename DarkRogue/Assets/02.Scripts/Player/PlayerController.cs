@@ -4,21 +4,42 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // 움직이는 속도
+    /// <summary>
+    /// 움직이는 속도
+    /// </summary>
     public float moveSpeed;
-    // 점프 힘.
+    /// <summary>
+    /// 점프 힘
+    /// </summary>
     public float jumpForce;
-    // 점프 횟수.
+    /// <summary>
+    /// 점프 횟수
+    /// </summary>
     public int jumpCount;
-    // 벽점프
+    /// <summary>
+    /// 벽점프 
+    /// </summary>
     public Vector2 climbJumpForce;
-    // 떨어지는 속도
+    /// <summary>
+    /// 떨어지는 속도
+    /// </summary>
     public float fallSpeed;
-    // 스프린트(대쉬) - 속도, 시간, 간격
+
+    /// <summary>
+    /// 스프린트(대쉬) - 속도
+    /// </summary>
     public float sprintSpeed;
+    /// <summary>
+    /// 스프린트(대쉬) - 시간
+    /// </summary>
     public float sprintTime;
+    /// <summary>
+    /// 스프린트(대쉬) - 간격
+    /// </summary>
     public float sprintInterval;
-    // 공격 간격
+    /// <summary>
+    /// 공격 간격
+    /// </summary>
     public float attackInterval;
 
     // 공격(위, 정면, 아래)
@@ -150,7 +171,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // 플레이어 상태 메서드
+    /// <summary>
+    /// 플레이어 상태 메서드
+    /// </summary>
     public void updatePlayerState()
     {
         // 땅에 닿았는지 체크.
@@ -190,7 +213,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // 플레이어 움직임 메서드
+    /// <summary>
+    /// 플레이어 움직임 메서드
+    /// </summary>
     private void move()
     {
         // 양쪽 움직임은 속도에 비례하게
@@ -258,7 +283,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // 점프 (space)
+    /// <summary>
+    /// 점프 실행(C key)
+    /// </summary>
     private void jumpControl()
     {
         // 만약 키보드의 C버튼을 누르고 있지 않으면 실행 x.
@@ -279,7 +306,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // 떨어지는 속도 컨트롤 구현
+    /// <summary>
+    /// 떨어지는 속도 컨트롤 구현
+    /// </summary>
     private void fallControl()
     {
         // 만약 C버튼을 누르고 있고 벽에 닿지 않았다면.
@@ -298,7 +327,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // 대쉬(x)
+    /// <summary>
+    /// 대쉬(x key)
+    /// </summary>
     private void sprintControl()
     {
         // 만약 X버튼을 누르고 있고 대쉬가 가능하며 대쉬의 쿨타임이 초기화 되었다면.
@@ -309,7 +340,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // 공격(z)
+    /// <summary>
+    /// 공격(z key)
+    /// </summary>
     private void attackControl()
     {
         // 만약 Z버튼을 누르고 있고 벽에 닿지 않았으며 공격이 가능한 상태라면.
@@ -321,10 +354,12 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    // 바닥 체크 메서드
+    /// <summary>
+    /// 바닥 체크 메서드
+    /// </summary>
     private bool checkGrounded()
     {
-        // 원점 좌표는 플레이어의 위치.
+        // 원점 좌표는 플레이어의 위치. 
         Vector2 origin = playerTransform.position;
 
         // 반경은 0.2f.
@@ -349,7 +384,9 @@ public class PlayerController : MonoBehaviour
         return hitPlatform.collider != null;
     }
 
-    // 점프 메서드.
+    /// <summary>
+    /// 점프 메서드.
+    /// </summary>
     private void jump()
     {
         // 새로운 속도 벡터 생성.
@@ -382,7 +419,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // 벽점프 메서드
+    /// <summary>
+    /// 벽점프 메서드
+    /// </summary>
     private void climbJump()
     {
         // 벽점프 힘 벡터 생성.
@@ -418,7 +457,9 @@ public class PlayerController : MonoBehaviour
         playerTransform.localScale = newScale;
     }
 
-    // 떨어지는 거 구현 메서드
+    /// <summary>
+    /// 떨어지는 거 구현 메서드
+    /// </summary>
     private void fall()
     {
         Vector2 newVelocity;
@@ -428,7 +469,9 @@ public class PlayerController : MonoBehaviour
         playerRigidbody.velocity = newVelocity;
     }
 
-    // 스프린트 메서드
+    /// <summary>
+    /// 스프린트 메서드
+    /// </summary>
     private void sprint()
     {
         // reject input during sprinting
@@ -467,7 +510,9 @@ public class PlayerController : MonoBehaviour
         isSprintReset = true;
     }
 
-    // 공격 메서드
+    /// <summary>
+    /// 공격 실행메서드
+    /// </summary>
     private void attack()
     {
         float verticalDirection = Input.GetAxis("Vertical");
@@ -479,7 +524,9 @@ public class PlayerController : MonoBehaviour
             attackForward();
     }
 
-    // 공격(위) 메서드
+    /// <summary>
+    /// 공격(위) 메서드
+    /// </summary>
     private void attackUp()
     {
         animator.SetTrigger("IsAttackUp");
@@ -492,7 +539,9 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(attackCoroutine(attackUpEffect, attackEffectLifeTime, attackInterval, detectDirection, attackUpRecoil));
     }
 
-    // 공격(정면) 메서드
+    /// <summary>
+    /// 공격(정면) 메서드
+    /// </summary>
     private void attackForward()
     {
         animator.SetTrigger("IsAttack");
@@ -509,7 +558,9 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(attackCoroutine(attackForwardEffect, attackEffectLifeTime, attackInterval, detectDirection, recoil));
     }
 
-    // 공격() 메서드
+    /// <summary>
+    /// 공격(아래) 메서드
+    /// </summary>
     private void attackDown()
     {
         animator.SetTrigger("IsAttackDown");

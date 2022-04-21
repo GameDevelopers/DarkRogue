@@ -143,7 +143,7 @@ public class InventoryUI : MonoBehaviour
         // 레이가 ui를 뚫고 가지 못하도록 만들어준다.
         // 모바일은 -1 대신 0
         if (!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(-1))
-        {
+        { 
             // 레이캐스트를 이용해서 히트값을 가져온다.
             RaycastHit2D hit2D = Physics2D.Raycast(mousePos, transform.forward, 30);
             if (hit2D.collider != null)
@@ -190,7 +190,7 @@ public class InventoryUI : MonoBehaviour
             // 인벤토리 창이 켜지면 상점이 안켜지게 설정
             isStoreActive = isOpen;
             shop.SetActive(isOpen);
-            inventoryPanel.SetActive(isOpen);
+            inventoryPanel.SetActive(!isOpen);
             // 모든 슬롯의 샵모드를 매개변수에다가 초기화되게 만들어준다
             for (int i = 0; i < slots.Length; i++)
             {   // 전달인자를 참으로 전달하게 되면 모든 슬롯에 샵모드가 참이된다
@@ -211,6 +211,7 @@ public class InventoryUI : MonoBehaviour
         {
             shopSlots[i].RemoveSlot();
         }
+        inventoryPanel.SetActive(false);
     }
 
     //

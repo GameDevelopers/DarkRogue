@@ -17,19 +17,14 @@ public class ItemDataBase : MonoBehaviour
 
     // 프리팹 복제 생성을 위한 변수
     public GameObject fielditemPrefab;
-    // 아이템을 생성할 위치
-    public Vector3[] pos;
+    
 
-    // 아이템 습득 확인을 위한 스타트 메서드
+    // 아이템 습득 확인
     private void Start()
     {
-        // 돈 초기값 10000 입력
-        money = 10000;
-        //for (int i = 0; i < 4; i++)
-        //{
-        //    GameObject go = Instantiate(fielditemPrefab, pos[i], Quaternion.identity);
-        //    go.GetComponent<FieldItems>().SetItem(itemDB[Random.Range(0, 3)]);
-        //}    
+        // 돈 초기값 입력
+        money = 0;
+         
     }
 
 }

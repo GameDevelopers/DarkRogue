@@ -180,6 +180,8 @@ GameObject:
   - component: {fileID: 5749919621656206632}
   - component: {fileID: 5749919621656206634}
   - component: {fileID: 5749919621656206635}
+  - component: {fileID: 7823799169900296028}
+  - component: {fileID: 949034998617061888}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -349,6 +351,8 @@ MonoBehaviour:
   attackForwardEffect: {fileID: 5748878485449450679}
   attackDownEffect: {fileID: 5749965971349721569}
   isGround: 0
+  sentences: []
+  talk: 0
 --- !u!114 &5749919621656206634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,6 +381,73 @@ MonoBehaviour:
   playerHealth: {fileID: 5749919621656206634}
   totalhealthBar: {fileID: 5184546834270960656, guid: 3e763dc1cc76dd04baafecb8df995652, type: 3}
   currenthealthBar: {fileID: 3261728347623586621, guid: 69249bd5ee8c00943a49d961445c0c8f, type: 3}
+--- !u!114 &7823799169900296028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5749919621656206633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 942f61bbce8def34d9ef91d6c7299269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - itemType: 0
+    itemName: 
+    itemImage: {fileID: 0}
+    efts: []
+    itemCost: 0
+  - itemType: 0
+    itemName: 
+    itemImage: {fileID: 0}
+    efts: []
+    itemCost: 0
+  - itemType: 0
+    itemName: 
+    itemImage: {fileID: 0}
+    efts: []
+    itemCost: 0
+  - itemType: 0
+    itemName: 
+    itemImage: {fileID: 0}
+    efts: []
+    itemCost: 0
+  - itemType: 0
+    itemName: 
+    itemImage: {fileID: 0}
+    efts: []
+    itemCost: 0
+  - itemType: 0
+    itemName: 
+    itemImage: {fileID: 0}
+    efts: []
+    itemCost: 0
+  - itemType: 0
+    itemName: 
+    itemImage: {fileID: 0}
+    efts: []
+    itemCost: 0
+  - itemType: 0
+    itemName: 
+    itemImage: {fileID: 0}
+    efts: []
+    itemCost: 0
+--- !u!114 &949034998617061888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5749919621656206633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf87a863b96e1a6499c7c4d045bf6827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  talk: 0
+  sentences: []
 --- !u!1 &5749965971349721569
 GameObject:
   m_ObjectHideFlags: 0

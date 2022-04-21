@@ -15,7 +15,7 @@ public class DialogManager : MonoBehaviour, IPointerDownHandler
     public float typingSpeed = 0.1f;
 
     public bool istyping = false;
-    public bool jump = false;
+    public bool skip = false;
 
     public CanvasGroup dialoggroup;
 
@@ -57,7 +57,7 @@ public class DialogManager : MonoBehaviour, IPointerDownHandler
         {
             dialoggroup.alpha = 0;
             dialoggroup.blocksRaycasts = false;
-            jump = false;
+            skip = false;
         }
     }
 
@@ -67,7 +67,7 @@ public class DialogManager : MonoBehaviour, IPointerDownHandler
         foreach( char letter in line.ToCharArray())
         {
             dialogText.text += letter;
-            if (jump) yield return null;
+            if (skip) yield return null;
             else yield return new WaitForSeconds(typingSpeed);
         }
         istyping = false;

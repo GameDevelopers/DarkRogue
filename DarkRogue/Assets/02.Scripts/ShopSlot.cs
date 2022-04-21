@@ -31,11 +31,11 @@ public class ShopSlot : MonoBehaviour, IPointerUpHandler
 
         itemIcon.sprite = item.itemImage;
         itemIcon.gameObject.SetActive(true);
-        //// 아이템이 팔렸다면 어둡게 만들어주는 코드 
-        //if (soldOut)
-        //{
-        //    itemIcon.color = new Color(0.5f, 0.5f, 0.5f);
-        //}
+        // 아이템이 팔렸다면 어둡게 만들어주는 코드 
+        if (soldOut)
+        {
+            itemIcon.color = new Color(0.5f, 0.5f, 0.5f);
+        }
     }
 
     // item은 null로 SetActive는 false를 시켜준다
@@ -51,18 +51,18 @@ public class ShopSlot : MonoBehaviour, IPointerUpHandler
     // 아이템을 구매시 가격만큼 돈에서 차감하고 해당아이템을 인벤토리에 표시
     public void OnPointerUp(PointerEventData eventData)
     {
-        //if (item != null)
-        //{                                                                    // 인벤이 꽉 차지 않았을 때만 아이템이 구매 가능하도록
-        //    if (ItemDataBase.instance.money >= item.itemCost && !soldOut && Inventory.instance.items.Count < Inventory.instance.SlotCnt)
-        //    {
-        //        ItemDataBase.instance.money -= item.itemCost;
-        //        Inventory.instance.AddItem(item);
-        //        // 슬롯이 클릭되면 UI의 Buy메서드를 호출하고 soldOut을 참으로 변경 
-        //        soldOut = true;
-        //        inventoryUI.Buy(slotnum);
-        //        UppdateSlotUI(); // 구매가 끝나면 업데이트 UI로 슬롯을 다시 그려준다.
-        //    }
-        //}
+        if (item != null)
+        {                                                                    // 인벤이 꽉 차지 않았을 때만 아이템이 구매 가능하도록
+            if (ItemDataBase.instance.money >= item.itemCost && !soldOut && Inventory.instance.items.Count < Inventory.instance.SlotCnt)
+            {
+                ItemDataBase.instance.money -= item.itemCost;
+                Inventory.instance.AddItem(item);
+                // 슬롯이 클릭되면 UI의 Buy메서드를 호출하고 soldOut을 참으로 변경 
+                soldOut = true;
+                inventoryUI.Buy(slotnum);
+                UppdateSlotUI(); // 구매가 끝나면 업데이트 UI로 슬롯을 다시 그려준다.
+            }
+        }
     }
 
 }
