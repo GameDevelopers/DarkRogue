@@ -18,6 +18,9 @@ public class FieldItems : MonoBehaviour
         item.itemImage = _item.itemImage;
         item.itemType = _item.itemType;
 
+        // 아이템 이펙트 변수 추가
+        item.efts = _item.efts;
+
         // 아이템 비용 함목 추가
         item.itemCost = _item.itemCost;
         

@@ -29,5 +29,4 @@ public class NPCtalk : MonoBehaviour
     {
         if (collision.tag == "Player") collision.gameObject.GetComponent<InvenPlayerController>().talk = false;
     }
-
 }

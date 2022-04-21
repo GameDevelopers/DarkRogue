@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 
-//  Slot.cs에서 UppdateSlotUI,RemoveSlot,OnPointerUp(얘만 내용삭제) 메서드 3개 복사가져오기
+//  Slot.cs에서 UppdateSlotUI,RemoveSlot,OnPointerUp(얘만 내용삭제) 
 public class ShopSlot : MonoBehaviour, IPointerUpHandler
 {
     public int slotnum;
