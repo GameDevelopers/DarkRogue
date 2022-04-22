@@ -4,42 +4,21 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    /// <summary>
-    /// 움직이는 속도
-    /// </summary>
+    // 움직이는 속도
     public float moveSpeed;
-    /// <summary>
-    /// 점프 힘
-    /// </summary>
+    // 점프 힘.
     public float jumpForce;
-    /// <summary>
-    /// 점프 횟수
-    /// </summary>
+    // 점프 횟수.
     public int jumpCount;
-    /// <summary>
-    /// 벽점프 
-    /// </summary>
+    // 벽점프
     public Vector2 climbJumpForce;
-    /// <summary>
-    /// 떨어지는 속도
-    /// </summary>
+    // 떨어지는 속도
     public float fallSpeed;
-
-    /// <summary>
-    /// 스프린트(대쉬) - 속도
-    /// </summary>
+    // 스프린트(대쉬) - 속도, 시간, 간격
     public float sprintSpeed;
-    /// <summary>
-    /// 스프린트(대쉬) - 시간
-    /// </summary>
     public float sprintTime;
-    /// <summary>
-    /// 스프린트(대쉬) - 간격
-    /// </summary>
     public float sprintInterval;
-    /// <summary>
-    /// 공격 간격
-    /// </summary>
+    // 공격 간격
     public float attackInterval;
 
     // 공격(위, 정면, 아래)
@@ -79,6 +58,17 @@ public class PlayerController : MonoBehaviour
     private BoxCollider2D boxCollider;
     private Health heaLth;
     private Enemy enemy;
+    private Boss boss;
+
+
+    private AudioSource audioSource;
+    public AudioClip attakSound;
+    //public AudioClip moveSound;
+    public AudioClip jumpSound;
+    public AudioClip landingSound;
+    public AudioClip sprintSound;
+
+
 
     private void Start()
     {
@@ -95,6 +85,8 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
         enemy = GetComponent<Enemy>();
+        boss = GetComponent<Boss>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -171,9 +163,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 플레이어 상태 메서드
-    /// </summary>
+    // 플레이어 상태 메서드
     public void updatePlayerState()
     {
         // 땅에 닿았는지 체크.
@@ -213,14 +203,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 플레이어 움직임 메서드
-    /// </summary>
+    // 플레이어 움직임 메서드
     private void move()
     {
         // 양쪽 움직임은 속도에 비례하게
         float horizonMove = Input.GetAxis("Horizontal") * moveSpeed;
-
         // 속도 설정
         Vector2 newVelocity;
         // x는 양쪽 움직임
@@ -235,7 +222,7 @@ public class PlayerController : MonoBehaviour
         {
             // 이동방향에 따라 플레이어의 스프라이트가 반전.
             float moveDirection = -playerTransform.localScale.x * horizonMove;
-
+            
             // 만약 플레이어의 이동방향이 0보다 작다면.
             if (moveDirection < 0)
             {
@@ -246,7 +233,7 @@ public class PlayerController : MonoBehaviour
                 // y, z값 노상관.
                 newScale.y = 1;
                 newScale.z = 1;
-
+                
                 // 플레이어의 크기를 위에서 설정한 것으로 초기화.
                 playerTransform.localScale = newScale;
 
@@ -262,6 +249,7 @@ public class PlayerController : MonoBehaviour
             {
                 // 달리는 애니메이션 on.
                 animator.SetBool("IsRun", true);
+                
             }
         }
 
@@ -283,9 +271,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 점프 실행(C key)
-    /// </summary>
+    // 점프 (space)
     private void jumpControl()
     {
         // 만약 키보드의 C버튼을 누르고 있지 않으면 실행 x.
@@ -306,9 +292,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 떨어지는 속도 컨트롤 구현
-    /// </summary>
+    // 떨어지는 속도 컨트롤 구현
     private void fallControl()
     {
         // 만약 C버튼을 누르고 있고 벽에 닿지 않았다면.
@@ -327,9 +311,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 대쉬(x key)
-    /// </summary>
+    // 대쉬(x)
     private void sprintControl()
     {
         // 만약 X버튼을 누르고 있고 대쉬가 가능하며 대쉬의 쿨타임이 초기화 되었다면.
@@ -340,9 +322,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 공격(z key)
-    /// </summary>
+    // 공격(z)
     private void attackControl()
     {
         // 만약 Z버튼을 누르고 있고 벽에 닿지 않았으며 공격이 가능한 상태라면.
@@ -350,16 +330,16 @@ public class PlayerController : MonoBehaviour
         {
             // 공격 메서드 실행.
             attack();
+            PlaySound("ATTACK");
         }
+       
     }
 
 
-    /// <summary>
-    /// 바닥 체크 메서드
-    /// </summary>
+    // 바닥 체크 메서드
     private bool checkGrounded()
     {
-        // 원점 좌표는 플레이어의 위치. 
+        // 원점 좌표는 플레이어의 위치.
         Vector2 origin = playerTransform.position;
 
         // 반경은 0.2f.
@@ -384,9 +364,7 @@ public class PlayerController : MonoBehaviour
         return hitPlatform.collider != null;
     }
 
-    /// <summary>
-    /// 점프 메서드.
-    /// </summary>
+    // 점프 메서드.
     private void jump()
     {
         // 새로운 속도 벡터 생성.
@@ -404,7 +382,7 @@ public class PlayerController : MonoBehaviour
         // 점프 시 점프횟수 -1.
         jumpCount -= 1;
         Debug.Log("점프");
-
+        PlaySound("JUMP");
         // 만약 남은 점프 횟수가 0이라면.
         if (jumpCount == 0)
         {
@@ -419,9 +397,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 벽점프 메서드
-    /// </summary>
+    // 벽점프 메서드
     private void climbJump()
     {
         // 벽점프 힘 벡터 생성.
@@ -457,9 +433,7 @@ public class PlayerController : MonoBehaviour
         playerTransform.localScale = newScale;
     }
 
-    /// <summary>
-    /// 떨어지는 거 구현 메서드
-    /// </summary>
+    // 떨어지는 거 구현 메서드
     private void fall()
     {
         Vector2 newVelocity;
@@ -469,9 +443,7 @@ public class PlayerController : MonoBehaviour
         playerRigidbody.velocity = newVelocity;
     }
 
-    /// <summary>
-    /// 스프린트 메서드
-    /// </summary>
+    // 스프린트 메서드
     private void sprint()
     {
         // reject input during sprinting
@@ -510,9 +482,7 @@ public class PlayerController : MonoBehaviour
         isSprintReset = true;
     }
 
-    /// <summary>
-    /// 공격 실행메서드
-    /// </summary>
+    // 공격 메서드
     private void attack()
     {
         float verticalDirection = Input.GetAxis("Vertical");
@@ -524,9 +494,7 @@ public class PlayerController : MonoBehaviour
             attackForward();
     }
 
-    /// <summary>
-    /// 공격(위) 메서드
-    /// </summary>
+    // 공격(위) 메서드
     private void attackUp()
     {
         animator.SetTrigger("IsAttackUp");
@@ -539,9 +507,7 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(attackCoroutine(attackUpEffect, attackEffectLifeTime, attackInterval, detectDirection, attackUpRecoil));
     }
 
-    /// <summary>
-    /// 공격(정면) 메서드
-    /// </summary>
+    // 공격(정면) 메서드
     private void attackForward()
     {
         animator.SetTrigger("IsAttack");
@@ -558,9 +524,7 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(attackCoroutine(attackForwardEffect, attackEffectLifeTime, attackInterval, detectDirection, recoil));
     }
 
-    /// <summary>
-    /// 공격(아래) 메서드
-    /// </summary>
+    // 공격() 메서드
     private void attackDown()
     {
         animator.SetTrigger("IsAttackDown");
@@ -598,6 +562,14 @@ public class PlayerController : MonoBehaviour
                     enemy.HitDamage(1);
 
             }
+            else if (layerName == "Boss")
+            {
+                BossHP bossHP = obj.GetComponent<BossHP>();
+                if (enemy != null)
+                    bossHP.BossDamaged(1);
+
+            }
+
         }
 
         if (hitRecList.Length > 0)
@@ -614,5 +586,32 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(attackInterval);
         isAttackable = true;
     }
+
+    private void PlaySound(string action)
+    {
+        switch (action)
+        {
+            case "JUMP":
+                audioSource.clip = jumpSound;
+                break;
+            case "ATTACK":
+                audioSource.clip = attakSound;
+                break;
+            //case "MOVE":
+            //    audioSource.clip = moveSound;
+            //    break;
+            case "LANDING":
+                audioSource.clip = landingSound;
+                break;
+            case "SPRINT":
+                audioSource.clip = sprintSound;
+                break;
+            //case "DIE":
+            //    audioSource.clip = dieSound;
+            //    break;
+        }
+        audioSource.Play();
+    }
 }
-    
+
+

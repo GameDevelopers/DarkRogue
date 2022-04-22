@@ -6,16 +6,12 @@ using UnityEngine.UI;
 public class InvenPlayerController : MonoBehaviour
 {
 
-    // 이동위한 벡터 변수
-    float moveX, moveY;
-
     public bool talk = false;
     public string[] sentences;
     float lastSpaceTime = 0f;
     float spaceTime = 0.5f;
 
-   
-    // 캐릭터 이동
+    
     private void Update()
     {
         if(talk) NPCTalk();

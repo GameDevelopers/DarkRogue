@@ -42,7 +42,7 @@ public class InventoryUI : MonoBehaviour
         }
 
         // onSlotCountChange가 참조할 메서드 정의
-        inven.onSlotCountChange += SlotChange;
+        //inven.onSlotCountChange += SlotChange;
         // 대리자 호출보다 메서드가 먼저 실행되는 에러 발생 시 
         // Edit - project Settings - Script Execution Order - InventoryUI , Inventory 순으로 
         // 스크립트 순서 지정해서 해결

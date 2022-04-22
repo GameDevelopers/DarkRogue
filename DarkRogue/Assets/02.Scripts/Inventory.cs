@@ -18,10 +18,6 @@ public class Inventory : MonoBehaviour
     }
     #endregion
 
-    // SlotCnt 값이 변경되면 알려주기 위해 Delegate(대리자)사용 
-    public delegate void OnSlotCountChange(int val); // 대리자 정의
-    public OnSlotCountChange onSlotCountChange; // 대리자 인스턴스화
-
     // 아이템이 추가되면 슬롯UI에도 추가되게 만들기
     public delegate void OnChangeItem();
     public OnChangeItem onChangeItem;
@@ -34,14 +30,12 @@ public class Inventory : MonoBehaviour
         set
         {
             slotCnt = value;
-            // 대리자 호출
-            onSlotCountChange.Invoke(slotCnt);
         }
     }
 
     private void Start()
     {
-        SlotCnt = 4;
+        SlotCnt = 16;
     }
 
     // 플레이어 아이템 습득 시 인벤토리로 이동
