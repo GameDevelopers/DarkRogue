@@ -190,7 +190,7 @@ public class InventoryUI : MonoBehaviour
             // 인벤토리 창이 켜지면 상점이 안켜지게 설정
             isStoreActive = isOpen;
             shop.SetActive(isOpen);
-            inventoryPanel.SetActive(isOpen);
+            inventoryPanel.SetActive(!isOpen); // 원래 isOpen
             // 모든 슬롯의 샵모드를 매개변수에다가 초기화되게 만들어준다
             for (int i = 0; i < slots.Length; i++)
             {   // 전달인자를 참으로 전달하게 되면 모든 슬롯에 샵모드가 참이된다
@@ -210,6 +210,7 @@ public class InventoryUI : MonoBehaviour
         for (int i = 0; i < shopSlots.Length; i++)
         {
             shopSlots[i].RemoveSlot();
+            inventoryPanel.SetActive(false); // 추가
         }
     }
 

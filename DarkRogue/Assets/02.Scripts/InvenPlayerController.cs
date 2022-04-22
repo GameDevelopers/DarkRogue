@@ -18,9 +18,6 @@ public class InvenPlayerController : MonoBehaviour
 
     }
 
-   
-
-
     void NPCTalk()
     {
         if (Input.GetKeyDown(KeyCode.Space) && Time.time >= lastSpaceTime + spaceTime)

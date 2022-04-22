@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/01.Scenes/Playing.unity
     guid: 96219c48e00791448b92f376301d3602
   - enabled: 1
-    path: Assets/01.Scenes/ShopNInven.unity
+    path: Assets/01.Scenes/Shop.unity
     guid: 02cb9a22d88120e44ab6abbd97dd59aa
   - enabled: 1
     path: Assets/01.Scenes/PlayerFunction.unity
