@@ -325,7 +325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogText: {fileID: 8532976926271429198}
   nextText: {fileID: 8532976928021048793}
-  typingSpeed: 0.1
+  typingSpeed: 0.07
   istyping: 0
   jump: 0
   dialoggroup: {fileID: 8532976927994931184}
