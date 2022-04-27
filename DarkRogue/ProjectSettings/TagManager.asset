@@ -7,9 +7,6 @@ TagManager:
   - FieldItem
   - Store
   - NPC
-  - Wall
-  - Enemy
-  - Platform
   layers:
   - Default
   - TransparentFX
@@ -17,21 +14,21 @@ TagManager:
   - 
   - Water
   - UI
-  - UI+
-  - 
-  - Player
-  - PlayerInvulnerable
-  - Enermy
+  - Ground
+  - Enemy
+  - Boss
   - Platform
   - Wall
-  - Trap
-  - Switch
-  - Decoration
-  - Background
-  - Airwall
-  - Hud
-  - Trigger
-  - Projectile
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -46,4 +43,31 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: remove
+    uniqueID: 14439173
+    locked: 0
+  - name: MiddleGround
+    uniqueID: 3122009285
+    locked: 0
+  - name: ForeGround1
+    uniqueID: 2270140333
+    locked: 0
+  - name: ForeGround2
+    uniqueID: 2947356933
+    locked: 0
+  - name: ForeGround3
+    uniqueID: 2941146407
+    locked: 0
+  - name: ForeGround4
+    uniqueID: 2444589011
+    locked: 0
+  - name: Platform
+    uniqueID: 3943300419
+    locked: 0
+  - name: BackGrounded
+    uniqueID: 2803712181
+    locked: 0
+  - name: decke
+    uniqueID: 487406735
     locked: 0
