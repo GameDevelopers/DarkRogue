@@ -505,7 +505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2585251740166623248, guid: 465eda58725c4984d914f68f9f4e5571, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.27999997
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 2585251740166623248, guid: 465eda58725c4984d914f68f9f4e5571, type: 3}
       propertyPath: m_LocalPosition.z
@@ -544,20 +544,11 @@ PrefabInstance:
       value: Portal1
       objectReference: {fileID: 0}
     - target: {fileID: 4620412136146249981, guid: 465eda58725c4984d914f68f9f4e5571, type: 3}
-      propertyPath: Portal
-      value: 
-      objectReference: {fileID: 901118672}
-    - target: {fileID: 4620412136146249981, guid: 465eda58725c4984d914f68f9f4e5571, type: 3}
       propertyPath: PortalUI
       value: 
       objectReference: {fileID: 1090226853}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 465eda58725c4984d914f68f9f4e5571, type: 3}
---- !u!1 &901118672 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2585251740166623253, guid: 465eda58725c4984d914f68f9f4e5571, type: 3}
-  m_PrefabInstance: {fileID: 901118671}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &901118673 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2585251740166623248, guid: 465eda58725c4984d914f68f9f4e5571, type: 3}

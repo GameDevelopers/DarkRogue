@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 5763079367947051459, guid: 312d041bf468408429f70a52e1069980, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.754717, g: 0.70772517, b: 0.70772517, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -142,7 +142,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d523bbffac5dd14980f09708a848a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Portal: {fileID: 0}
-  Portal1: 0
-  Portal2: 0
-  Portal3: 0
+  PortalUI: {fileID: 0}
+  Portal: {fileID: 2585251740166623253}

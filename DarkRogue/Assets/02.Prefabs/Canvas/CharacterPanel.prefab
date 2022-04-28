@@ -428,10 +428,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2421464286845453754}
     m_Modifications:
-    - target: {fileID: 976353019863959981, guid: cf3ee23ba03d1bf41a5a3b19992b5081, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6705959454726448164, guid: cf3ee23ba03d1bf41a5a3b19992b5081, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -515,34 +511,6 @@ PrefabInstance:
     - target: {fileID: 6705959454726448164, guid: cf3ee23ba03d1bf41a5a3b19992b5081, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6705959454726448165, guid: cf3ee23ba03d1bf41a5a3b19992b5081, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6705959454726448165, guid: cf3ee23ba03d1bf41a5a3b19992b5081, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6705959454726448165, guid: cf3ee23ba03d1bf41a5a3b19992b5081, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 134273243045830848, guid: bfc1b35d8da52a541bf4dfa3ce2abb6e, type: 3}
-    - target: {fileID: 6705959454726448165, guid: cf3ee23ba03d1bf41a5a3b19992b5081, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6705959454726448165, guid: cf3ee23ba03d1bf41a5a3b19992b5081, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 6705959454726448165, guid: cf3ee23ba03d1bf41a5a3b19992b5081, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6705959454726448165, guid: cf3ee23ba03d1bf41a5a3b19992b5081, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6705959454726448187, guid: cf3ee23ba03d1bf41a5a3b19992b5081, type: 3}
       propertyPath: m_Name
