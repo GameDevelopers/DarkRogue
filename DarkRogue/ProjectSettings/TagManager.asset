@@ -71,3 +71,6 @@ TagManager:
   - name: decke
     uniqueID: 487406735
     locked: 0
+  - name: Canvas
+    uniqueID: 1503905605
+    locked: 0
