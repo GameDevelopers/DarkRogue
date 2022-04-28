@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PortalUI: {fileID: 0}
-  Portal: {fileID: 0}
+  Portal: {fileID: 1822089149420441650}
 --- !u!61 &7821305881872143236
 BoxCollider2D:
   m_ObjectHideFlags: 0
