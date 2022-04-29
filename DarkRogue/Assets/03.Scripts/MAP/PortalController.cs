@@ -18,6 +18,11 @@ public class PortalController : MonoBehaviour
         if ( collision.tag == "Player") {
             PortalUI.SetActive(true);            
         }   
+        // 보스 씬 진행되면 포탈 비활성화
+        if (collision.tag == "Player"&& SceneManager.GetActiveScene().name == "BossScene")
+        {
+            PortalUI.SetActive(false);
+        }
     }
     // 포탈과 떨어지면 텍스트 false
     void OnTriggerExit2D(Collider2D collision) {
@@ -33,15 +38,19 @@ public class PortalController : MonoBehaviour
                 case ("Portal1"):
                     // 완전 변경 LoadScene("빌드세팅에서 이름")
                     // 새 씬 열기 SceneManager.LoadScene("이름", LoadSceneMode.Additive);
+                    SoundManager.sm.PortalclipPlay();
                     SceneManager.LoadScene("VillScene");
                     break;
                 case ("Portal2"):
+                    SoundManager.sm.PortalclipPlay();
                     SceneManager.LoadScene("MapScene");
                     break;
                 case ("Portal3"):
+                    SoundManager.sm.PortalclipPlay();
                     SceneManager.LoadScene("BossScene");
                     break;
                 case ("Portal4"):
+                    SoundManager.sm.PortalclipPlay();
                     SceneManager.LoadScene("Shop");
                     break;
             }

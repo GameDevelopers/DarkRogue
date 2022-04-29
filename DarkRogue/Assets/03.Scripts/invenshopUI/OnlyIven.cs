@@ -62,13 +62,16 @@ public class OnlyIven : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             if (!isPause)
-            {   // 일시정지 중이 아니면 일시정지
+            {
+                SoundManager.sm.UIonoffPlay();
+                // 일시정지 중이 아니면 일시정지
                 Time.timeScale = 0; // 시간정지
                 activeInventory = !activeInventory;
                 inventoryPanel.SetActive(activeInventory); // 패널활성화
             }
             else
             {
+                SoundManager.sm.UIonoffPlay();
                 Time.timeScale = 1.0f; // 시간흐름 비율 1
                 activeInventory = !activeInventory;
                 inventoryPanel.SetActive(activeInventory);
