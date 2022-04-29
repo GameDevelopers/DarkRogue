@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     {
         
          SoundManager.sm.SelectBtnPlay();
-        StartCoroutine(SceneChange());
+         StartCoroutine(SceneChange());
          //SceneManager.LoadScene(1);
         
     }
