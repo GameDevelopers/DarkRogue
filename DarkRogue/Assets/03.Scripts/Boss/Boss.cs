@@ -13,16 +13,16 @@ public class Boss : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public float MaxHP => maxHP;    // HpView 스크립트에서 쓰기 위함.
     public float CurrentHP => currentHP;    // HpView 스크립트에서 쓰기 위함.
-                                            
+
     [Header("BossMove")]
-    [SerializeField]private float bossMoveSpeed;
-    [SerializeField]private Vector2 bossMoveDirection;
+    [SerializeField] private float bossMoveSpeed;
+    [SerializeField] private Vector2 bossMoveDirection;
     [Header("AttackUp&Down")]
-    [SerializeField]private float attackMoveSpeed;
-    [SerializeField]private Vector2 attackMoveDirection;
+    [SerializeField] private float attackMoveSpeed;
+    [SerializeField] private Vector2 attackMoveDirection;
     [Header("AttackPlayer")]
-    [SerializeField]private float attackPlayerSpeed;
-    [SerializeField]private GameObject player;
+    [SerializeField] private float attackPlayerSpeed;
+    [SerializeField] private GameObject player;
     [SerializeField]
     private Vector3 playerPosition;
     [SerializeField]
@@ -88,15 +88,15 @@ public class Boss : MonoBehaviour
 
     public void BossState()
     {
-        if ( isTouchingUp && goingUp )
+        if (isTouchingUp && goingUp)
         {
             ChangeDirection();
         }
-        else if ( isTouchingDown && !goingUp)
+        else if (isTouchingDown && !goingUp)
         {
             ChangeDirection();
         }
-        if ( isTouchingWall)
+        if (isTouchingWall)
         {
             if (facingLeft)
             {

@@ -206,13 +206,13 @@ public class PlayerController : MonoBehaviour
         newVelocity.y = playerRigidbody.velocity.y;
         // 플레이어의 속도를 위에서 지정한 값으로 초기화.
         playerRigidbody.velocity = newVelocity;
-      
+
         // 벽에 닿아 있지 않으면.
         if (!isClimb)
         {
             // 이동방향에 따라 플레이어의 스프라이트가 반전.
             float moveDirection = -playerTransform.localScale.x * horizonMove;
-            
+
             // 만약 플레이어의 이동방향이 0보다 작다면.
             if (moveDirection < 0)
             {
@@ -278,7 +278,7 @@ public class PlayerController : MonoBehaviour
         else if (jumpCount > 0)
         {
             // 점프 메서드 실행.
-            jump();        
+            jump();
         }
         PlaySound("JUMP");
     }
@@ -324,7 +324,7 @@ public class PlayerController : MonoBehaviour
             attack();
             PlaySound("ATTACK");
         }
-       
+
     }
 
 
@@ -596,13 +596,12 @@ public class PlayerController : MonoBehaviour
             case "SPRINT":
                 audioSource.clip = sprintSound;
                 break;
-            //case "DIE":
-            //    audioSource.clip = dieSound;
-            //    break;
+                //case "DIE":
+                //    audioSource.clip = dieSound;
+                //    break;
         }
         audioSource.Play();
     }
-
 }
 
 

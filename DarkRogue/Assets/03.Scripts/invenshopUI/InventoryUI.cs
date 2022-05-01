@@ -203,8 +203,7 @@ public class InventoryUI : MonoBehaviour
     // 상점창 끄는 메서드
     public void DeActiveShop()
     {
-        //사운드
-        SoundManager.sm.Shopclip2Play();
+        
         ActiveShop(false);
         //  샵데이터와 연결을 끊어주고 상점의 슬롯을 전부 초기화 시킨다.
         shopData = null;
