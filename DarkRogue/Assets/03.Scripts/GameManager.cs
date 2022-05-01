@@ -8,7 +8,8 @@ public class GameManager : MonoBehaviour
     public GameObject menuPanel; // 메뉴 클릭시 패널 활성화
     public bool isPause = false; // 일시정지 상태
     public GameObject Keymap; // 키맵 패널
-    
+    public bool isOpen = false; // 키맵 열린지 확인
+
     public void Startgame()
     {
         
@@ -57,23 +58,24 @@ public class GameManager : MonoBehaviour
     
     public void OnKeymap()
     {
-        if (!isPause)
+        if (!isOpen)
         {
             SoundManager.sm.UIonoffPlay(); // 사운드
-            Time.timeScale = 0; // 시간정지
             menuPanel.SetActive(false);
-            // 패널활성화
+            // 키맵 활성화
             Keymap.SetActive(true);
-
+            
         }
+
         else
         {
-            SoundManager.sm.UIonoffPlay();
-            Time.timeScale = 1.0f; 
-            Keymap.SetActive(false);
+             SoundManager.sm.UIonoffPlay();
+             Keymap.SetActive(false);
+             Time.timeScale = 1.0f; // 시간흐름 비율 1
         }
 
-        isPause = !isPause; 
+        isOpen = !isOpen;
+        
     }
 
 
