@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2324512376346821002, guid: 3e7b9df98bfc1a24eaa01c555ae4f3bd, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2324512376346821002, guid: 3e7b9df98bfc1a24eaa01c555ae4f3bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -275,6 +275,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2762341300817634354, guid: ce89fbb62c63b9842bdcf1d07b6b42dc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3477181639530628348, guid: ce89fbb62c63b9842bdcf1d07b6b42dc, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -285,7 +289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3477181639530628348, guid: ce89fbb62c63b9842bdcf1d07b6b42dc, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3477181639530628348, guid: ce89fbb62c63b9842bdcf1d07b6b42dc, type: 3}
       propertyPath: m_AnchorMax.x
@@ -363,7 +367,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCanvas
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2762341300817634354, guid: ce89fbb62c63b9842bdcf1d07b6b42dc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ce89fbb62c63b9842bdcf1d07b6b42dc, type: 3}
 --- !u!1001 &3637169582613336042
 PrefabInstance:

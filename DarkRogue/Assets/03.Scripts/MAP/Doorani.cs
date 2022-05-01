@@ -17,7 +17,7 @@ public class Doorani : MonoBehaviour
 
         else if (doorhp <= 0)
         {
-            SoundManager.sm.doorclipPlay();
+           
             animator.SetTrigger("Crash");
          
         }
