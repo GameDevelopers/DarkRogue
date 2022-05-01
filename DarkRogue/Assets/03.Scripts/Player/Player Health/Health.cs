@@ -44,4 +44,15 @@ public class Health : MonoBehaviour
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Spark")
+        {
+            // 장애물 충돌 시 체력 -1
+            collision.GetComponent<Health>().TakeDamage(1.0f);
+        }
+    }
+
 }

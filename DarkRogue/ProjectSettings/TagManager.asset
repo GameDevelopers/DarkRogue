@@ -8,6 +8,7 @@ TagManager:
   - Store
   - NPC
   - Enemy
+  - Spark
   layers:
   - Default
   - TransparentFX

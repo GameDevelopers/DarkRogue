@@ -16,6 +16,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip NPCclip;
     public AudioClip Shopclip;
     public AudioClip Shopclip2;
+    public AudioClip doorclip;
 
     #region singleton
     public static SoundManager sm;
@@ -69,6 +70,10 @@ public class SoundManager : MonoBehaviour
     public void Shopclip2Play()
     {
         audioSource.PlayOneShot(Shopclip2);
+    }
+    public void doorclipPlay()
+    {
+        audioSource.PlayOneShot(doorclip);
     }
 
 
