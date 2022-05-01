@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
     private Transform playerTransform;
     private AudioSource audioSource;
     public AudioClip attakSound;
-    //public AudioClip moveSound;
+    public AudioClip moveSound;
     public AudioClip jumpSound;
     public AudioClip landingSound;
     public AudioClip sprintSound;
@@ -160,6 +160,7 @@ public class PlayerController : MonoBehaviour
         // 땅에 닿았으면 애니메이터의 IsGround 체크.
         animator.SetBool("IsGround", isGround);
 
+
         // 떨어지는 속도 = 플레이어의 y값 
         float verticalVelocity = playerRigidbody.velocity.y;
         // 떨어지는 속도의 값이 0보다 떨어지는 상태.
@@ -190,7 +191,6 @@ public class PlayerController : MonoBehaviour
             // 점프 1번 가능.
             jumpCount = 1;
         }
-
     }
 
     // 플레이어 움직임 메서드
@@ -206,7 +206,7 @@ public class PlayerController : MonoBehaviour
         newVelocity.y = playerRigidbody.velocity.y;
         // 플레이어의 속도를 위에서 지정한 값으로 초기화.
         playerRigidbody.velocity = newVelocity;
-
+      
         // 벽에 닿아 있지 않으면.
         if (!isClimb)
         {
@@ -223,7 +223,8 @@ public class PlayerController : MonoBehaviour
                 // y, z값 노상관.
                 newScale.y = 1;
                 newScale.z = 1;
-                
+                PlaySound("MOVE");
+
                 // 플레이어의 크기를 위에서 설정한 것으로 초기화.
                 playerTransform.localScale = newScale;
 
@@ -239,7 +240,6 @@ public class PlayerController : MonoBehaviour
             {
                 // 달리는 애니메이션 on.
                 animator.SetBool("IsRun", true);
-                
             }
         }
 
@@ -261,7 +261,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // 점프 (space)
+    // 점프 (X)
     private void jumpControl()
     {
         // 만약 키보드의 C버튼을 누르고 있지 않으면 실행 x.
@@ -280,6 +280,7 @@ public class PlayerController : MonoBehaviour
             // 점프 메서드 실행.
             jump();        
         }
+        PlaySound("JUMP");
     }
 
     // 떨어지는 속도 컨트롤 구현
@@ -309,6 +310,7 @@ public class PlayerController : MonoBehaviour
         {
             // 대쉬 메서드 실행.
             sprint();
+            PlaySound("SPRINT");
         }
     }
 
@@ -371,8 +373,6 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("IsJump", true);
         // 점프 시 점프횟수 -1.
         jumpCount -= 1;
-        Debug.Log("점프");
-        PlaySound("JUMP");
         // 만약 남은 점프 횟수가 0이라면.
         if (jumpCount == 0)
         {
@@ -587,9 +587,9 @@ public class PlayerController : MonoBehaviour
             case "ATTACK":
                 audioSource.clip = attakSound;
                 break;
-            //case "MOVE":
-            //    audioSource.clip = moveSound;
-            //    break;
+            case "MOVE":
+                audioSource.clip = moveSound;
+                break;
             case "LANDING":
                 audioSource.clip = landingSound;
                 break;

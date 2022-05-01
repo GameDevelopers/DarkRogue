@@ -3,123 +3,224 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum BossState { Appear = 0, Phase1, Phase2}
-
 public class Boss : MonoBehaviour
 {
-    // 보스가 죽었는가
-    public bool isBossDie = false;
-    // 보스가 나타나는 시간
+    [Header("Boss HP")]
     [SerializeField]
-    private float bossAppear = 2.5f;
-    // 보스 상태 - 나타나기
-    private BossState bossState = BossState.Appear;
-    // 움직임(등장을 위함)
-    private Movement movement;
-    private BossWeapon bossWeapon;
-    // 보스 공격력
-    public int bossDamage = 1;
-    // 보스 최대 HP
+    private float maxHP = 10;    // 보스 최대 HP
+    private float currentHP;    // 현재 보스의 HP
+    public int bossDamage = 1;    // 보스 공격력
+    private SpriteRenderer spriteRenderer;
+    public float MaxHP => maxHP;    // HpView 스크립트에서 쓰기 위함.
+    public float CurrentHP => currentHP;    // HpView 스크립트에서 쓰기 위함.
+                                            
+    [Header("BossMove")]
+    [SerializeField]private float bossMoveSpeed;
+    [SerializeField]private Vector2 bossMoveDirection;
+    [Header("AttackUp&Down")]
+    [SerializeField]private float attackMoveSpeed;
+    [SerializeField]private Vector2 attackMoveDirection;
+    [Header("AttackPlayer")]
+    [SerializeField]private float attackPlayerSpeed;
+    [SerializeField]private GameObject player;
     [SerializeField]
-    private float maxHP = 10;
-    // 현재 보스의 HP
-    private float currentHP;
-    //private SpriteRenderer spriteRenderer;
+    private Vector3 playerPosition;
+    [SerializeField]
+    private bool isPlayerPosition;
+    [Header("Others")]
+    [SerializeField] private Transform platformCheckUp;
+    [SerializeField] private Transform platformCheckDown;
+    [SerializeField] private Transform platformCheckWall;
+    [SerializeField] private float platformCheckRadius;
+    [SerializeField] private LayerMask platformLayer;
+    private bool isTouchingUp;
+    private bool isTouchingDown;
+    private bool isTouchingWall;
+    private bool goingUp = true;
+    private bool facingLeft = true;
+    private Rigidbody2D bossRB;
+    private Animator bossAnimation;
+    // 배경음악 설정(보스피깎 시 변경)
+    [SerializeField]
+    private BossMapBGM bossBGM;
+    [SerializeField]
+    private GameObject nextScene;
+    [SerializeField]
+    private GameObject dieParticle;
+    [SerializeField]
+    private CameraShake Camera;
+    private BossSound bossSound;
 
-    // HpView 스크립트에서 쓰기 위함.
-    public float MaxHP => maxHP;
-    // HpView 스크립트에서 쓰기 위함.
-    public float CurrentHP => currentHP;
-    private Animator animator;
-    private Animation anim;
-
-
-    //[SerializeField]
-    //public GameObject BossClearText;
 
     private void Awake()
     {
-        // 참조
-        movement = GetComponent<Movement>();
-        anim = GetComponent<Animation>();
-        animator = GetComponent<Animator>();
-        bossWeapon = GetComponent<BossWeapon>();
         // 현재 HP를 최대 HP로
         currentHP = maxHP;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        bossMoveDirection.Normalize();
+        attackMoveDirection.Normalize();
+        bossRB = GetComponent<Rigidbody2D>();
+        bossAnimation = GetComponent<Animator>();
+        Camera = GameObject.FindWithTag("MainCamera").GetComponent<CameraShake>();
     }
 
-    //public void Update()
-    //{
-    //    StartCoroutine(Move());
-    //}
+    private void Update()
+    {
+        isTouchingUp = Physics2D.OverlapCircle(platformCheckUp.position, platformCheckRadius, platformLayer);
+        isTouchingDown = Physics2D.OverlapCircle(platformCheckDown.position, platformCheckRadius, platformLayer);
+        isTouchingWall = Physics2D.OverlapCircle(platformCheckWall.position, platformCheckRadius, platformLayer);
+        AttackPlayer();
+    }
 
+    private void randomStatePick()
+    {
+        int randomState = Random.Range(0, 2);
+        if (randomState == 0)
+        {
+            // AttackUPDown 애니메이션
+            bossAnimation.SetTrigger("AttackUpDown");
+        }
+        else if (randomState == 1)
+        {
+            bossAnimation.SetTrigger("AttackPlayer");
+        }
+    }
+
+    public void BossState()
+    {
+        if ( isTouchingUp && goingUp )
+        {
+            ChangeDirection();
+        }
+        else if ( isTouchingDown && !goingUp)
+        {
+            ChangeDirection();
+        }
+        if ( isTouchingWall)
+        {
+            if (facingLeft)
+            {
+                Flip();
+            }
+            else if (!facingLeft)
+            {
+                Flip();
+            }
+        }
+        bossRB.velocity = bossMoveSpeed * bossMoveDirection;
+    }
+
+    public void AttackUpNDown()
+    {
+        if (isTouchingUp && goingUp)
+        {
+            ChangeDirection();
+            Debug.Log("u");
+        }
+        else if (isTouchingDown && !goingUp)
+        {
+            ChangeDirection();
+            Debug.Log("d");
+        }
+        if (isTouchingWall && facingLeft)
+        {
+            Flip();
+            Debug.Log("wl");
+        }
+        else if (!facingLeft && isTouchingWall)
+        {
+            Flip();
+            Debug.Log("wr");
+        }
+        bossRB.velocity = attackMoveSpeed * attackMoveDirection;
+    }
+
+    public void AttackPlayer()
+    {
+        if (!isPlayerPosition)
+        {
+            //플레이어 좌표
+            playerPosition = player.transform.position + transform.position;
+            FlipTowardPlayer();
+            //플레이어 좌표 노멀라이즈
+            playerPosition.Normalize();
+            isPlayerPosition = true;
+            Debug.Log("1");
+        }
+        if (isPlayerPosition)
+        {
+            //위 좌표로 공격
+            bossRB.velocity = playerPosition * attackPlayerSpeed;
+            Debug.Log("2");
+        }
+        if (isTouchingWall || isTouchingDown)
+        {
+            isPlayerPosition = false;
+            //stun animation
+            bossRB.velocity = Vector2.zero;
+            bossAnimation.SetTrigger("Stuned");
+            Debug.Log("3");
+        }
+    }
+
+    private void FlipTowardPlayer()
+    {
+        float playerDirection = player.transform.position.x - transform.position.x;
+        if (playerDirection > 0 && facingLeft)
+        {
+            Flip();
+        }
+        else if (playerDirection < 0 && !facingLeft)
+        {
+            Flip();
+        }
+    }
+
+    private void ChangeDirection()
+    {
+        goingUp = !goingUp;
+        bossMoveDirection.y *= -1;
+        attackMoveDirection.y *= -1;
+        Camera.VibrateFormTime(0.05f);
+    }
+
+    private void Flip()
+    {
+        facingLeft = !facingLeft;
+        bossMoveDirection.x *= -1;
+        attackMoveDirection.x *= -1;
+        transform.Rotate(0, 180, 0);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(platformCheckUp.position, platformCheckRadius);
+        Gizmos.DrawWireSphere(platformCheckDown.position, platformCheckRadius);
+        Gizmos.DrawWireSphere(platformCheckWall.position, platformCheckRadius);
+    }
     // 보스가 입는 데미지
     public void BossDamaged(float damage)
     {
-        // 현재 HP를 -damage만큼
-        currentHP -= damage;
-
-        //StopCoroutine("HitAnimation");
-        //StartCoroutine("HitAnimation");
-
+        if (currentHP == 5f)
+        {
+            bossBGM.ChangeBgm(BGMType.BossHpHalf);
+        }
+        //if (isBossDie) return;
+        //Debug.Log(isBossDie);
         // 만약 현재 hp가 0보다 작거나 같다면
-        if (currentHP <= 0)
+        if (currentHP == 0)
         {
             // 체력이 0이면 보스 사망.
-            StartCoroutine("BossDie");
+            BossDie();
+            //isBossDie = true;
         }
+        // 현재 HP를 -damage만큼
+        currentHP -= damage;
+        StopCoroutine("HitAnimation");
+        StartCoroutine("HitAnimation");
     }
 
-    public void ChangeState(BossState newState)
-    {
-        StopCoroutine(bossState.ToString());
-        bossState = newState;
-        StartCoroutine(bossState.ToString());
-    }
-
-
-    private IEnumerator Appear()
-    {
-        movement.Move(Vector3.up);
-
-        while (true)
-        {
-            if (transform.position.y <= bossAppear)
-            {
-                movement.Move(Vector3.zero);
-                ChangeState(BossState.Phase1);
-            }
-            yield return null;
-        }
-
-    }
-
-    private IEnumerator Phase1()
-    {
-
-        yield return new WaitForSeconds(1.0f);
-        animator.SetTrigger("IsAttack1");
-
-        yield return new WaitForSeconds(1.0f);
-        bossWeapon.StartFire(AtkType.Circle);
-        while (true)
-        { 
-            if (CurrentHP <= MaxHP * 0.5f)
-            {
-                animator.SetTrigger("IsRun");
-                ChangeState(BossState.Phase2);
-            }
-            yield return null;
-        }
-    }
-
-    private IEnumerator Phase2()
-    {
-        //yield return new WaitForSeconds(1.0f);
-        animator.SetTrigger("IsAttack2");
-        yield return null;
-
-    }
 
     // 플레이어와 충돌하면
     private void OnTriggerEnter2D(Collider2D collision)
@@ -131,19 +232,23 @@ public class Boss : MonoBehaviour
         }
     }
 
-    public IEnumerator BossDie()
+    private IEnumerator HitAnimation()
     {
-        isBossDie = true;
-        // 보스 파괴 이펙트 생성
-        //BossClearText.SetActive(true);
+        // 색상 변경
+        spriteRenderer.color = Color.black;
+        //0.1초 대기
+        yield return new WaitForSeconds(0.1f);
+        // 원래 색상으로
+        spriteRenderer.color = Color.white;
+    }
 
-        yield return new WaitForSeconds(1.0f);
-
-
-        animator.SetTrigger("IsDead");
-
-        yield return new WaitForSeconds(1.0f);
-        // 보스 오브젝트 삭제
+    public void BossDie()
+    {
+        //animator.SetTrigger("IsDead");
+        //yield return new WaitForSeconds(1.0f);
+        //// 보스 오브젝트 삭제
         Destroy(gameObject);
+        dieParticle.SetActive(true);
+        nextScene.SetActive(true);
     }
 }

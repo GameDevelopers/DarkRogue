@@ -12,13 +12,13 @@ public class HealthBar : MonoBehaviour
     [SerializeField]
     private Image currenthealthBar;
 
-    //void Start()
-    //{
-    //    totalhealthBar.fillAmount = playerHealth.currentHealth / 10;
-    //}
+    void Start()
+    {
+        totalhealthBar.fillAmount = playerHealth.currentHealth / 10;
+    }
 
-    //void Update()
-    //{
-    //    currenthealthBar.fillAmount = playerHealth.currentHealth / 10;  
-    //}
+    void Update()
+    {
+        currenthealthBar.fillAmount = playerHealth.currentHealth / 10;  
+    }
 }

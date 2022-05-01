@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject menuPanel; // 메뉴 클릭시 패널 활성화
     public bool isPause = false; // 일시정지 상태
+    public GameObject Keymap; // 키맵 패널
     
     public void Startgame()
     {
@@ -43,7 +44,6 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0; // 시간정지
             // 패널활성화
             menuPanel.SetActive(true);
-            Debug.Log("click");
         }
         else
         {
@@ -53,6 +53,27 @@ public class GameManager : MonoBehaviour
         }
 
         isPause = !isPause; // 메뉴 누를 때마다 상태가 반대로 바뀜
+    } 
+    
+    public void OnKeymap()
+    {
+        if (!isPause)
+        {
+            SoundManager.sm.UIonoffPlay(); // 사운드
+            Time.timeScale = 0; // 시간정지
+            menuPanel.SetActive(false);
+            // 패널활성화
+            Keymap.SetActive(true);
+
+        }
+        else
+        {
+            SoundManager.sm.UIonoffPlay();
+            Time.timeScale = 1.0f; 
+            Keymap.SetActive(false);
+        }
+
+        isPause = !isPause; 
     }
 
 
