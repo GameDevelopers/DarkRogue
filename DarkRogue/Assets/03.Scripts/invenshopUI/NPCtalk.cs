@@ -23,6 +23,11 @@ public class NPCtalk : MonoBehaviour
             playerController.talk = true;
             playerController.sentences = this.sentences;
         }
+
+        if(gameObject.name=="NPC 1")
+        {
+            SoundManager.sm.NPCclipPlay();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

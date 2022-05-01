@@ -51,6 +51,9 @@ MonoBehaviour:
   UIonoff: {fileID: 8300000, guid: 6ff6c7c4e2036f14f9beac3d7d38aa23, type: 3}
   SceneChangeSound: {fileID: 8300000, guid: fc3f158af1f500d43a5e4ee0230c29cc, type: 3}
   Portalclip: {fileID: 8300000, guid: 3f258d7adee8e294abf0c2001a33f4db, type: 3}
+  NPCclip: {fileID: 8300000, guid: 92c9d95e1f55fae42b2518eed798c492, type: 3}
+  Shopclip: {fileID: 8300000, guid: acda13e773d27514e900b139c3a3a084, type: 3}
+  Shopclip2: {fileID: 8300000, guid: e225be4897db8ad49a0046c5333a5426, type: 3}
 --- !u!82 &7298650883620652255
 AudioSource:
   m_ObjectHideFlags: 0

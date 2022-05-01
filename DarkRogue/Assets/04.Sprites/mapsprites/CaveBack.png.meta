@@ -707,7 +707,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 368
-        y: 1172
+        y: 1174
         width: 136
         height: 121
       alignment: 0
@@ -875,9 +875,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 4
-        y: 895
-        width: 186
-        height: 78
+        y: 888
+        width: 237
+        height: 83
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -887,27 +887,6 @@ TextureImporter:
       bones: []
       spriteID: 8bc054cc3cfd04640800000000000000
       internalID: 5062292013203131576
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CaveBack_33
-      rect:
-        serializedVersion: 2
-        x: 194
-        y: 889
-        width: 48
-        height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d55b0e8350211840800000000000000
-      internalID: 5192967388572374488
       vertices: []
       indices: 
       edges: []
@@ -1396,27 +1375,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CaveBack_57
-      rect:
-        serializedVersion: 2
-        x: 441
-        y: 87
-        width: 5
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 574b4bb6d28fbf9b0800000000000000
-      internalID: -5045166083574287243
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: CaveBack_58
       rect:
         serializedVersion: 2
@@ -1441,8 +1399,8 @@ TextureImporter:
       name: CaveBack_59
       rect:
         serializedVersion: 2
-        x: 885
-        y: 3
+        x: 899
+        y: 10
         width: 573
         height: 306
       alignment: 0
@@ -1504,12 +1462,12 @@ TextureImporter:
       name: CaveBack_16
       rect:
         serializedVersion: 2
-        x: 1117
-        y: 1173
+        x: 1115
+        y: 1175
         width: 287
         height: 118
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1530,7 +1488,7 @@ TextureImporter:
         width: 218
         height: 397
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

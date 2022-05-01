@@ -13,6 +13,9 @@ public class SoundManager : MonoBehaviour
     public AudioClip UIonoff;
     public AudioClip SceneChangeSound;
     public AudioClip Portalclip;
+    public AudioClip NPCclip;
+    public AudioClip Shopclip;
+    public AudioClip Shopclip2;
 
     #region singleton
     public static SoundManager sm;
@@ -55,8 +58,18 @@ public class SoundManager : MonoBehaviour
     {
         audioSource.PlayOneShot(Portalclip);
     }
-
-
+    public void NPCclipPlay()
+    {
+        audioSource.PlayOneShot(NPCclip);
+    }
+    public void ShopclipPlay()
+    {
+        audioSource.PlayOneShot(Shopclip);
+    }
+    public void Shopclip2Play()
+    {
+        audioSource.PlayOneShot(Shopclip2);
+    }
 
 
 

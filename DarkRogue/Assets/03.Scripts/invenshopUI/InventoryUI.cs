@@ -120,8 +120,6 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-
-
     // 상점 클릭 시 거래창 활성화 되게하는 코드 작성
     public GameObject shop;
     // 상점을 비활성화 시키는 코드 작성을 위한 버튼변수
@@ -184,10 +182,11 @@ public class InventoryUI : MonoBehaviour
     // 비/활성화 코드는 따로 작성
     public void ActiveShop(bool isOpen)
     {
+        //사운드
+        SoundManager.sm.ShopclipPlay();
         if (!activeInventory)
         {
-            // 인벤토리 활성여부 : 상점이 켜지면 i키를 눌러도 인벤토리 창이 사라지지않고,
-            // 인벤토리 창이 켜지면 상점이 안켜지게 설정
+            // 인벤과 상점이 동시에 활성화 되지 않음
             isStoreActive = isOpen;
             shop.SetActive(isOpen);
             inventoryPanel.SetActive(!isOpen); // 원래 isOpen
@@ -204,6 +203,8 @@ public class InventoryUI : MonoBehaviour
     // 상점창 끄는 메서드
     public void DeActiveShop()
     {
+        //사운드
+        SoundManager.sm.Shopclip2Play();
         ActiveShop(false);
         //  샵데이터와 연결을 끊어주고 상점의 슬롯을 전부 초기화 시킨다.
         shopData = null;
@@ -214,7 +215,7 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    //
+    
     public void SellBtn()
     {
         // 슬롯의 크기에서 하나씩 빼면서 진행

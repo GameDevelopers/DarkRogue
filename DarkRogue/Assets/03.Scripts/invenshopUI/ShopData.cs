@@ -14,11 +14,7 @@ public class ShopData : MonoBehaviour
     {
         //// 테스트를 위한 아이템 추가
         //stocks.Add(ItemDataBase.instance.itemDB[0]);
-        //stocks.Add(ItemDataBase.instance.itemDB[1]);
-        //stocks.Add(ItemDataBase.instance.itemDB[2]);
-        //stocks.Add(ItemDataBase.instance.itemDB[3]);
-   
-        
+      
         // 해당아이템이 팔린 위치 정보를 가지고 있을 것
         soldOuts = new bool[stocks.Count];
         // 배열을 리스트의 크기만큼 초기화하고 반복문을 통해 배열을 전부 거짓으로 초기화

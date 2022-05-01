@@ -326,8 +326,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 616613477
-  m_SortingLayer: 0
+  m_SortingLayerID: 1503905605
+  m_SortingLayer: 10
   m_SortingOrder: 0
   m_Sprite: {fileID: 6998040180752483474, guid: d6f3b37fdd01d8e4e86ea7db5b07a2a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -530,10 +530,11 @@ MonoBehaviour:
   attackForwardEffect: {fileID: 2326591966506263504}
   attackDownEffect: {fileID: 2326762321773975174}
   isGround: 0
-  attakSound: {fileID: 8300000, guid: c00dffd5930dd0647bba11b3911b5c31, type: 3}
-  jumpSound: {fileID: 8300000, guid: 5c67c73a23ed8694faeb5fb1382d925d, type: 3}
-  landingSound: {fileID: 8300000, guid: 1c448f85799ceb245a87c73df3e8ff64, type: 3}
-  sprintSound: {fileID: 8300000, guid: 9a1f3b1fca1f22b4cae05f632cd5231d, type: 3}
+  attakSound: {fileID: 8300000, guid: 22314f7ad210c194184435426d746a7a, type: 3}
+  moveSound: {fileID: 8300000, guid: cead2a5c2f9e07348bdf857f8f30cab4, type: 3}
+  jumpSound: {fileID: 8300000, guid: 716b0373e11da004fbb923b07f21e8e8, type: 3}
+  landingSound: {fileID: 8300000, guid: f4ac2ddbb870e5c44bd9100178a32d88, type: 3}
+  sprintSound: {fileID: 8300000, guid: 1b8db47388ed1cf47b87ec52dc4e802a, type: 3}
 --- !u!114 &2326805170163702349
 MonoBehaviour:
   m_ObjectHideFlags: 0
