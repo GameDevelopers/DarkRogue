@@ -10,7 +10,7 @@ public class Doorani : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && doorhp < 0)
+        if (collision.gameObject.tag == "Player" && doorhp > 0)
         {
             --doorhp;
         }

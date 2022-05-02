@@ -16,6 +16,8 @@ public class SoundManager : MonoBehaviour
     public AudioClip NPCclip;
     public AudioClip Shopclip;
     public AudioClip Shopclip2;
+
+    
   
 
     #region singleton
