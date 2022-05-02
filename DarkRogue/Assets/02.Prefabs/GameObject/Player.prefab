@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2501975647045411966}
   m_Layer: 3
   m_Name: UpAttackImage
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68,8 +68,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 616613477
-  m_SortingLayer: 0
+  m_SortingLayerID: 1503905605
+  m_SortingLayer: 10
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ea3994027675a8b46b1254ccf3f3f191, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 2502002788569263512}
   m_Layer: 3
   m_Name: AttackImage
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,8 +150,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 616613477
-  m_SortingLayer: 0
+  m_SortingLayerID: 1503905605
+  m_SortingLayer: 10
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ea3994027675a8b46b1254ccf3f3f191, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 2503417862504946622}
   m_Layer: 3
   m_Name: DownAttackImage
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -232,8 +232,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 616613477
-  m_SortingLayer: 0
+  m_SortingLayerID: 1503905605
+  m_SortingLayer: 10
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ea3994027675a8b46b1254ccf3f3f191, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -260,11 +260,11 @@ GameObject:
   - component: {fileID: 2348552003977741166}
   - component: {fileID: 2327433147173141797}
   - component: {fileID: 2326805170163702354}
-  - component: {fileID: 2326805170163702351}
   - component: {fileID: 2326805170163702349}
   - component: {fileID: 2326805170163702348}
   - component: {fileID: 6817606352942715228}
   - component: {fileID: 7411067467834543612}
+  - component: {fileID: 4714871301376819217}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -328,7 +328,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1503905605
   m_SortingLayer: 10
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 6998040180752483474, guid: d6f3b37fdd01d8e4e86ea7db5b07a2a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -368,11 +368,11 @@ BoxCollider2D:
   m_GameObject: {fileID: 2326805170163702350}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 16d34ff523c9147e496984bb57c34847, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.031191826, y: -0.05458641}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -383,7 +383,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.66, y: 1.32}
+  m_Size: {x: 0.5870571, y: 1.3272514}
   m_EdgeRadius: 0
 --- !u!50 &2327433147173141797
 Rigidbody2D:
@@ -502,39 +502,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2326805170163702351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2326805170163702350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cb3b73a526f66e4a91881df50b0c022, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  jumpForce: 8
-  jumpCount: 2
-  climbJumpForce: {x: 8, y: 10}
-  fallSpeed: 5
-  sprintSpeed: 10
-  sprintTime: 0.15
-  sprintInterval: 0.4
-  attackInterval: 0.3
-  attackUpRecoil: {x: 0, y: -2}
-  attackForwardRecoil: {x: -2, y: 0}
-  attackDownRecoil: {x: 0, y: 4}
-  attackUpEffect: {fileID: 2326511592561772826}
-  attackForwardEffect: {fileID: 2326591966506263504}
-  attackDownEffect: {fileID: 2326762321773975174}
-  isGround: 0
-  attakSound: {fileID: 8300000, guid: 22314f7ad210c194184435426d746a7a, type: 3}
-  moveSound: {fileID: 8300000, guid: cead2a5c2f9e07348bdf857f8f30cab4, type: 3}
-  jumpSound: {fileID: 8300000, guid: 716b0373e11da004fbb923b07f21e8e8, type: 3}
-  landingSound: {fileID: 8300000, guid: f4ac2ddbb870e5c44bd9100178a32d88, type: 3}
-  sprintSound: {fileID: 8300000, guid: 1b8db47388ed1cf47b87ec52dc4e802a, type: 3}
 --- !u!114 &2326805170163702349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -590,3 +557,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talk: 0
   sentences: []
+--- !u!114 &4714871301376819217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2326805170163702350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cb3b73a526f66e4a91881df50b0c022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  jumpForce: 8
+  jumpCount: 2
+  climbJumpForce: {x: 8, y: 10}
+  fallSpeed: 5
+  sprintSpeed: 10
+  sprintTime: 0.15
+  sprintInterval: 0.4
+  attackInterval: 0.3
+  attackUpRecoil: {x: 0, y: -2}
+  attackForwardRecoil: {x: -2, y: 0}
+  attackDownRecoil: {x: 0, y: 4}
+  attackUpEffect: {fileID: 2326511592561772826}
+  attackForwardEffect: {fileID: 2326591966506263504}
+  attackDownEffect: {fileID: 2326762321773975174}
+  isGround: 0
+  attakSound: {fileID: 8300000, guid: 38c79067ebec2b54bbcab19811b2d6f9, type: 3}
+  moveSound: {fileID: 8300000, guid: cead2a5c2f9e07348bdf857f8f30cab4, type: 3}
+  jumpSound: {fileID: 8300000, guid: 716b0373e11da004fbb923b07f21e8e8, type: 3}
+  landingSound: {fileID: 8300000, guid: f4ac2ddbb870e5c44bd9100178a32d88, type: 3}
+  sprintSound: {fileID: 8300000, guid: 1b8db47388ed1cf47b87ec52dc4e802a, type: 3}
