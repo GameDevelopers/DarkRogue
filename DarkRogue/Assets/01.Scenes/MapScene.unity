@@ -2284,26 +2284,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2348552003977741166, guid: 3e7b9df98bfc1a24eaa01c555ae4f3bd, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.7101296
-      objectReference: {fileID: 0}
-    - target: {fileID: 2348552003977741166, guid: 3e7b9df98bfc1a24eaa01c555ae4f3bd, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.71
-      objectReference: {fileID: 0}
-    - target: {fileID: 2503401765741325976, guid: 3e7b9df98bfc1a24eaa01c555ae4f3bd, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2503401765741325976, guid: 3e7b9df98bfc1a24eaa01c555ae4f3bd, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 6998040180752483474, guid: 2184ca542cf46e24a9d6bd3db42549b4, type: 3}
-    - target: {fileID: 2503401765741325976, guid: 3e7b9df98bfc1a24eaa01c555ae4f3bd, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e7b9df98bfc1a24eaa01c555ae4f3bd, type: 3}
 --- !u!1 &164489450 stripped
@@ -27298,6 +27278,14 @@ PrefabInstance:
     - target: {fileID: 2011650798313064029, guid: de7140ebfcf6b1842ac7f61c492f4cae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5344494790431006012, guid: de7140ebfcf6b1842ac7f61c492f4cae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1756561920}
+    - target: {fileID: 5344494790431006012, guid: de7140ebfcf6b1842ac7f61c492f4cae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMenu
       objectReference: {fileID: 0}
     - target: {fileID: 8643991346201392777, guid: de7140ebfcf6b1842ac7f61c492f4cae, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

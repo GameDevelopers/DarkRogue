@@ -566,6 +566,7 @@ GameObject:
   - component: {fileID: 336030036}
   - component: {fileID: 336030035}
   - component: {fileID: 336030038}
+  - component: {fileID: 336030039}
   m_Layer: 6
   m_Name: STARTButton
   m_TagString: Untagged
@@ -697,6 +698,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 336030033}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a8b2e742e2d48409391fcc264c45f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &336030039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336030033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -705,13 +718,13 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 336030038}
-          m_TargetAssemblyTypeName: UnityEngine.EventSystems.EventTrigger, UnityEngine.UI
-          m_MethodName: OnSelect
-          m_Mode: 0
+        - m_Target: {fileID: 594310382}
+          m_TargetAssemblyTypeName: ButtonMethod, Assembly-CSharp
+          m_MethodName: Enter
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 336030035}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -1075,9 +1088,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 594310380}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95a8b2e742e2d48409391fcc264c45f2, type: 3}
+  m_Script: {fileID: 11500000, guid: 2727adb8dc24e2e4da68eea02bdb8014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  button: {fileID: 336030035}
 --- !u!222 &594310383
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1633,6 +1647,8 @@ GameObject:
   - component: {fileID: 1637050182}
   - component: {fileID: 1637050181}
   - component: {fileID: 1637050180}
+  - component: {fileID: 1637050183}
+  - component: {fileID: 1637050184}
   m_Layer: 6
   m_Name: 'EXITButton '
   m_TagString: Untagged
@@ -1755,6 +1771,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1637050178}
   m_CullTransparentMesh: 1
+--- !u!114 &1637050183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637050178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a8b2e742e2d48409391fcc264c45f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1637050184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637050178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 594310382}
+          m_TargetAssemblyTypeName: ButtonMethod, Assembly-CSharp
+          m_MethodName: Enter
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1637050180}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2013885895
 GameObject:
   m_ObjectHideFlags: 0

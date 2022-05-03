@@ -1254,12 +1254,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7872921724485999262, guid: 984791d65f7d98f4cabef11a28602cca, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872921724485999262, guid: 984791d65f7d98f4cabef11a28602cca, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872921724485999262, guid: 984791d65f7d98f4cabef11a28602cca, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872921724485999262, guid: 984791d65f7d98f4cabef11a28602cca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7872921724485999262, guid: 984791d65f7d98f4cabef11a28602cca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Exitgame
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872921724988168734, guid: 984791d65f7d98f4cabef11a28602cca, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872921724988168734, guid: 984791d65f7d98f4cabef11a28602cca, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872921724988168734, guid: 984791d65f7d98f4cabef11a28602cca, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7872921724988168734, guid: 984791d65f7d98f4cabef11a28602cca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1292,6 +1316,18 @@ PrefabInstance:
     - target: {fileID: 7872921725779209661, guid: 984791d65f7d98f4cabef11a28602cca, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872921725902665243, guid: 984791d65f7d98f4cabef11a28602cca, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872921725902665243, guid: 984791d65f7d98f4cabef11a28602cca, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872921725902665243, guid: 984791d65f7d98f4cabef11a28602cca, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7872921725902665243, guid: 984791d65f7d98f4cabef11a28602cca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

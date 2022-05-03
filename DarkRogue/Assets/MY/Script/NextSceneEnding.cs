@@ -7,19 +7,22 @@ public class NextSceneEnding : MonoBehaviour
 {
 	public Animator anim;
 
-	void OnTriggerEnter2D(Collider2D other)
-	{
-		if (other.CompareTag("Player"))
+	public GameObject lighting; // 빛 애니메이션
+	public GameObject enddingCredit; // 엔딩크레딧
+
+
+	private void OnTriggerEnter2D(Collider2D collision)
+    {
+		if (collision.CompareTag("Player") && Input.GetKeyDown(KeyCode.KeypadEnter))
 		{
-			StartCoroutine(FadeIn());
+			SceneManager.LoadScene("Menu");
 		}
 
+		if (collision.tag == "Player" && Input.GetKeyDown(KeyCode.UpArrow))
+		{
+			lighting.SetActive(true);
+
+		}
 	}
 
-	IEnumerator FadeIn()
-	{
-		anim.SetTrigger("FadeIn");
-		yield return new WaitForSeconds(0.5f);
-		SceneManager.LoadScene("Menu");
-	}
 }

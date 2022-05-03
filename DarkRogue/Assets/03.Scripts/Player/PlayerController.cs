@@ -224,14 +224,14 @@ public class PlayerController : MonoBehaviour
                 newScale.y = 1;
                 newScale.z = 1;
                 PlaySound("MOVE");
-                Debug.Log("move");
+               // Debug.Log("move");
                 // 플레이어의 크기를 위에서 설정한 것으로 초기화.
                 playerTransform.localScale = newScale;
 
                 // 만약에 땅에 닿았다면.
                 if (isGround)
                 {
-                    Debug.Log("isground");
+                   // Debug.Log("isground");
                     // 되돌리는 애니매이션 on.
                     animator.SetTrigger("IsRotate");
                 }
@@ -239,7 +239,7 @@ public class PlayerController : MonoBehaviour
             // 또 만약에 이동방향이 0보다 크다면(오
             else if (moveDirection > 0)
             {
-                Debug.Log("isrun");
+               // Debug.Log("isrun");
                 // 달리는 애니메이션 on.
                 animator.SetBool("IsRun", true);
             }

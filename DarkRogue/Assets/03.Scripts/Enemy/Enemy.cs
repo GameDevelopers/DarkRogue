@@ -24,6 +24,11 @@ public class Enemy : MonoBehaviour
     private float rightEdge;
     private Animator enemyAnim;
 
+    //사운드
+    public AudioSource audioSource;
+    public AudioClip enemyClip;
+    public AudioClip enemyDieClip;
+
     // 아이템 드랍 배열(지오, 회복)
     [SerializeField]
     private GameObject[] itemPrefabs;
@@ -48,6 +53,7 @@ public class Enemy : MonoBehaviour
         {
             if (transform.position.x > leftEdge)
             {
+                audioSource.PlayOneShot(enemyClip);
                 enemySprite.flipX = false;
 
                 transform.position = new Vector3(transform.position.x - speed * Time.deltaTime, transform.position.y, transform.position.z);
@@ -128,6 +134,7 @@ public class Enemy : MonoBehaviour
     private IEnumerator EnemyDie()
     {
         enemyAnim.SetTrigger("IsDead");
+        audioSource.PlayOneShot(enemyDieClip);
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
         yield return new WaitForSeconds(0.5f);
         Destroy(this.gameObject);
