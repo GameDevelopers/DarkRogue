@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip landingSound;
     public AudioClip sprintSound;
 
-
+    private bool facingRight = true;
 
     private void Start()
     {
@@ -193,7 +193,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // 플레이어 움직임 메서드
     private void move()
     {
         // 양쪽 움직임은 속도에 비례하게
@@ -211,35 +210,25 @@ public class PlayerController : MonoBehaviour
         if (!isClimb)
         {
             // 이동방향에 따라 플레이어의 스프라이트가 반전.
-            float moveDirection = -playerTransform.localScale.x * horizonMove;
+            float moveDirection = horizonMove;
 
             // 만약 플레이어의 이동방향이 0보다 작다면.
-            if (moveDirection < 0)
+            if (moveDirection < 0 && !facingRight)
             {
-                // 플레이어의 스프라이트가 반전.
-                Vector3 newScale;
-                // x = 움직임이 0보다 작다면 양수(오른쪽으로) 아니면 음수(왼쪽으로)
-                newScale.x = horizonMove < 0 ? 1 : -1;
-                // y, z값 노상관.
-                newScale.y = 1;
-                newScale.z = 1;
+                Flip();
                 PlaySound("MOVE");
-               // Debug.Log("move");
-                // 플레이어의 크기를 위에서 설정한 것으로 초기화.
-                playerTransform.localScale = newScale;
 
                 // 만약에 땅에 닿았다면.
                 if (isGround)
                 {
-                   // Debug.Log("isground");
                     // 되돌리는 애니매이션 on.
                     animator.SetTrigger("IsRotate");
                 }
             }
             // 또 만약에 이동방향이 0보다 크다면(오
-            else if (moveDirection > 0)
+            else if (moveDirection > 0 && facingRight)
             {
-               // Debug.Log("isrun");
+                Flip();
                 // 달리는 애니메이션 on.
                 animator.SetBool("IsRun", true);
             }
@@ -261,6 +250,15 @@ public class PlayerController : MonoBehaviour
             // 멈춤상태의 애니메이션 종료.
             animator.ResetTrigger("stopTrigger");
         }
+    }
+
+    void Flip()
+    {
+        Vector3 currentScale = gameObject.transform.localScale;
+        currentScale.x *= -1;
+        gameObject.transform.localScale = currentScale;
+
+        facingRight = !facingRight;
     }
 
     // 점프 (X)
