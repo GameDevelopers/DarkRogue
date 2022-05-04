@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip landingSound;
     public AudioClip sprintSound;
 
-    private bool facingRight = true;
+    private bool faceRight = true;
 
     private void Start()
     {
@@ -213,10 +213,14 @@ public class PlayerController : MonoBehaviour
             float moveDirection = horizonMove;
 
             // 만약 플레이어의 이동방향이 0보다 작다면.
-            if (moveDirection < 0 && !facingRight)
+            if (moveDirection < 0 && !faceRight)
             {
                 Flip();
                 PlaySound("MOVE");
+                animator.SetBool("IsRun", true);
+
+                // 플레이어의 크기를 위에서 설정한 것으로 초기화.
+                //playerTransform.localScale = newScale;
 
                 // 만약에 땅에 닿았다면.
                 if (isGround)
@@ -226,7 +230,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
             // 또 만약에 이동방향이 0보다 크다면(오
-            else if (moveDirection > 0 && facingRight)
+            else if (moveDirection > 0 && faceRight)
             {
                 Flip();
                 // 달리는 애니메이션 on.
@@ -254,11 +258,8 @@ public class PlayerController : MonoBehaviour
 
     void Flip()
     {
-        Vector3 currentScale = gameObject.transform.localScale;
-        currentScale.x *= -1;
-        gameObject.transform.localScale = currentScale;
-
-        facingRight = !facingRight;
+        faceRight = !faceRight;
+        transform.Rotate(0f, 180f, 0f);
     }
 
     // 점프 (X)

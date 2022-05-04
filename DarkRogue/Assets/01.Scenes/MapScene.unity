@@ -3550,11 +3550,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &287028948 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7202728790755007717, guid: b4a6bb6b87003284f88f7558ae93d22e, type: 3}
-  m_PrefabInstance: {fileID: 797602846292793494}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &289621998
 GameObject:
   m_ObjectHideFlags: 0
@@ -10147,7 +10142,7 @@ GameObject:
   - component: {fileID: 752713741}
   - component: {fileID: 752713743}
   - component: {fileID: 752713742}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: spike2 (1)
   m_TagString: Spark
   m_Icon: {fileID: 0}
@@ -10229,7 +10224,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -11928,7 +11923,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.4130244, y: -0.5010146}
+  m_Offset: {x: 2.42409, y: -0.5010146}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -11939,7 +11934,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7736714, y: 1.2178323}
+  m_Size: {x: 1.7958027, y: 1.2178323}
   m_EdgeRadius: 0
 --- !u!61 &909683203
 BoxCollider2D:
@@ -12678,7 +12673,7 @@ GameObject:
   - component: {fileID: 972084463}
   - component: {fileID: 972084465}
   - component: {fileID: 972084464}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: spike2 (2)
   m_TagString: Spark
   m_Icon: {fileID: 0}
@@ -12760,7 +12755,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -12965,7 +12960,7 @@ GameObject:
   - component: {fileID: 1008613319}
   - component: {fileID: 1008613321}
   - component: {fileID: 1008613320}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: spike2 (3)
   m_TagString: Spark
   m_Icon: {fileID: 0}
@@ -13047,7 +13042,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -14146,7 +14141,7 @@ GameObject:
   - component: {fileID: 1091800364}
   - component: {fileID: 1091800366}
   - component: {fileID: 1091800365}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: spike2 (4)
   m_TagString: Spark
   m_Icon: {fileID: 0}
@@ -14228,7 +14223,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -15619,7 +15614,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1238055682}
   - component: {fileID: 1238055681}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: ancient_wall_cliffs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16568,7 +16563,7 @@ GameObject:
   - component: {fileID: 1279370445}
   - component: {fileID: 1279370447}
   - component: {fileID: 1279370446}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: spike2
   m_TagString: Spark
   m_Icon: {fileID: 0}
@@ -16650,7 +16645,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -21105,10 +21100,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 681640629}
     m_Modifications:
-    - target: {fileID: 762051326, guid: b4a6bb6b87003284f88f7558ae93d22e, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6792449511977197507, guid: b4a6bb6b87003284f88f7558ae93d22e, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -25163,7 +25154,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -3.4650993, y: 1.1036236}
+  m_Offset: {x: -3.4650993, y: 0.83215296}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -25174,7 +25165,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.4590988, y: 6.784126}
+  m_Size: {x: 3.4590988, y: 8.486961}
   m_EdgeRadius: 0
 --- !u!4 &1979562553
 Transform:
@@ -25700,7 +25691,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.2786345, y: -0.050283313}
+  m_Offset: {x: 1.4477614, y: -0.050283313}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -25711,7 +25702,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.39727, y: 1.4494333}
+  m_Size: {x: 5.059016, y: 1.4494333}
   m_EdgeRadius: 0
 --- !u!1 &2013703028
 GameObject:
@@ -26692,14 +26683,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 681640629}
     m_Modifications:
-    - target: {fileID: 762051326, guid: b4a6bb6b87003284f88f7558ae93d22e, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 762051327, guid: b4a6bb6b87003284f88f7558ae93d22e, type: 3}
-      propertyPath: door
-      value: 
-      objectReference: {fileID: 287028948}
     - target: {fileID: 6792449511977197507, guid: b4a6bb6b87003284f88f7558ae93d22e, type: 3}
       propertyPath: m_RootOrder
       value: 19

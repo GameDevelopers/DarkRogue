@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5573438726144461202}
   - component: {fileID: 762051327}
   - component: {fileID: 762051326}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e01073f3224b2f442a495d4f37cc4b62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 0}
   doorhp: 2
 --- !u!70 &762051326
 CapsuleCollider2D:
@@ -128,7 +127,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.0000019073486, y: -0.00000011920929}
