@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3052575495032793842}
   - component: {fileID: 3052575495032793843}
   - component: {fileID: 3052575495032793740}
+  - component: {fileID: 6047085241771165122}
   m_Layer: 0
   m_Name: lightend
   m_TagString: Untagged
@@ -102,3 +103,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6047085241771165122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3052575495032793741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb7af94e2fba814c805a06dbd8f531b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Endding: {fileID: 0}
+  light: {fileID: 0}

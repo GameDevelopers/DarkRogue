@@ -1761,7 +1761,7 @@ GameObject:
   - component: {fileID: 5706951721220645036}
   - component: {fileID: 5706951721220645039}
   - component: {fileID: 5706951721220645038}
-  - component: {fileID: 5706951721220645025}
+  - component: {fileID: 8091955218333169361}
   m_Layer: 0
   m_Name: Next SCENE Collider
   m_TagString: Untagged
@@ -1780,9 +1780,9 @@ Transform:
   m_LocalPosition: {x: 54.77, y: 0.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7304012054896682152}
   - {fileID: 7052490688978767329}
   - {fileID: 2432133899160424638}
+  - {fileID: 7304012054896682152}
   m_Father: {fileID: 321024116860796100}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1833,7 +1833,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5706951721220645025
+--- !u!114 &8091955218333169361
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1846,11 +1846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  lighting: {fileID: 0}
-  Light: {fileID: 0}
-  enddingCredit: {fileID: 0}
-  Endding: {fileID: 0}
-  isend: 0
+  light: {fileID: 2432133899160424641}
 --- !u!1 &7052490688978767332
 GameObject:
   m_ObjectHideFlags: 0
@@ -1881,7 +1877,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5706951721220645036}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &7052490688978767334
 ParticleSystem:
@@ -13464,7 +13460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3052575495032793842, guid: 480077511dc50ff4791e7aa4029dd45e, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3052575495032793842, guid: 480077511dc50ff4791e7aa4029dd45e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13508,6 +13504,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 480077511dc50ff4791e7aa4029dd45e, type: 3}
+--- !u!1 &2432133899160424641 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3052575495032793741, guid: 480077511dc50ff4791e7aa4029dd45e, type: 3}
+  m_PrefabInstance: {fileID: 836616028880992844}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2432133899160424638 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3052575495032793842, guid: 480077511dc50ff4791e7aa4029dd45e, type: 3}
@@ -13524,9 +13525,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: enddingCredit
       objectReference: {fileID: 0}
+    - target: {fileID: 7973539485948075232, guid: 82c3125721ee2af49a4a459e45116e1c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7973539485948075233, guid: 82c3125721ee2af49a4a459e45116e1c, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7973539485948075233, guid: 82c3125721ee2af49a4a459e45116e1c, type: 3}
       propertyPath: m_LocalPosition.x

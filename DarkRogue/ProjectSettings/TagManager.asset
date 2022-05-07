@@ -9,6 +9,7 @@ TagManager:
   - NPC
   - Enemy
   - Spark
+  - Wall
   layers:
   - Default
   - TransparentFX

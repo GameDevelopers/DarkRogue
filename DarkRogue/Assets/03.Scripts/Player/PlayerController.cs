@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //  움직임
+    private float horizonMove;
     // 움직이는 속도
     public float moveSpeed;
     // 점프 힘.
@@ -196,7 +198,7 @@ public class PlayerController : MonoBehaviour
     private void move()
     {
         // 양쪽 움직임은 속도에 비례하게
-        float horizonMove = Input.GetAxis("Horizontal") * moveSpeed;
+        horizonMove = Input.GetAxis("Horizontal") * moveSpeed;
         // 속도 설정
         Vector2 newVelocity;
         // x는 양쪽 움직임
@@ -443,7 +445,7 @@ public class PlayerController : MonoBehaviour
         isSprintReset = false;
 
         Vector2 newVelocity;
-        newVelocity.x = playerTransform.localScale.x * (isClimb ? sprintSpeed : -sprintSpeed);
+        newVelocity.x = -horizonMove * 0.5f* (isClimb ? sprintSpeed : -sprintSpeed);
         newVelocity.y = 0;
 
         playerRigidbody.velocity = newVelocity;

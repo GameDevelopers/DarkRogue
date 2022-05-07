@@ -2284,6 +2284,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4714871301376819217, guid: 3e7b9df98bfc1a24eaa01c555ae4f3bd, type: 3}
+      propertyPath: sprintTime
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e7b9df98bfc1a24eaa01c555ae4f3bd, type: 3}
 --- !u!1 &164489450 stripped
@@ -15616,7 +15620,7 @@ GameObject:
   - component: {fileID: 1238055681}
   m_Layer: 10
   m_Name: ancient_wall_cliffs
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16180,6 +16184,90 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 686985128}
     m_Modifications:
+    - target: {fileID: 2701405638811749401, guid: 73263e4b143d3c64fbdd4fb58dd9c3ee, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701405638811749401, guid: 73263e4b143d3c64fbdd4fb58dd9c3ee, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701405638811749401, guid: 73263e4b143d3c64fbdd4fb58dd9c3ee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 4374040238767919138, guid: 73263e4b143d3c64fbdd4fb58dd9c3ee, type: 3}
+      propertyPath: m_SortingLayer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4374040238767919138, guid: 73263e4b143d3c64fbdd4fb58dd9c3ee, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1850378285
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842785279160442850, guid: 73263e4b143d3c64fbdd4fb58dd9c3ee, type: 3}
+      propertyPath: m_SortingLayer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842785279160442850, guid: 73263e4b143d3c64fbdd4fb58dd9c3ee, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1850378285
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924588455377781199, guid: 73263e4b143d3c64fbdd4fb58dd9c3ee, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -331.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924588455377781199, guid: 73263e4b143d3c64fbdd4fb58dd9c3ee, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6713533071932827281, guid: 73263e4b143d3c64fbdd4fb58dd9c3ee, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6713533071932827281, guid: 73263e4b143d3c64fbdd4fb58dd9c3ee, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6713533071932827281, guid: 73263e4b143d3c64fbdd4fb58dd9c3ee, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7810284952310741661, guid: 73263e4b143d3c64fbdd4fb58dd9c3ee, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7810284952310741661, guid: 73263e4b143d3c64fbdd4fb58dd9c3ee, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7810284952310741661, guid: 73263e4b143d3c64fbdd4fb58dd9c3ee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7810284952310741661, guid: 73263e4b143d3c64fbdd4fb58dd9c3ee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7810284952310741661, guid: 73263e4b143d3c64fbdd4fb58dd9c3ee, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7810284952310741661, guid: 73263e4b143d3c64fbdd4fb58dd9c3ee, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7810284952310741661, guid: 73263e4b143d3c64fbdd4fb58dd9c3ee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7810284952310741661, guid: 73263e4b143d3c64fbdd4fb58dd9c3ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7810284952310741661, guid: 73263e4b143d3c64fbdd4fb58dd9c3ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8597729239862922112, guid: 73263e4b143d3c64fbdd4fb58dd9c3ee, type: 3}
       propertyPath: m_Name
       value: NPC 1 Variant
@@ -16202,7 +16290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8597729239862922117, guid: 73263e4b143d3c64fbdd4fb58dd9c3ee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.01
+      value: -2.07
       objectReference: {fileID: 0}
     - target: {fileID: 8597729239862922117, guid: 73263e4b143d3c64fbdd4fb58dd9c3ee, type: 3}
       propertyPath: m_LocalPosition.z
@@ -16243,6 +16331,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8597729239862922117, guid: 73263e4b143d3c64fbdd4fb58dd9c3ee, type: 3}
   m_PrefabInstance: {fileID: 1263780278}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1263780280 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6904501150141593849, guid: 73263e4b143d3c64fbdd4fb58dd9c3ee, type: 3}
+  m_PrefabInstance: {fileID: 1263780278}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1263780281
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263780280}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c22eda22dbc37734b96b7dccb569aaf8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1269422732
 PrefabInstance:
   m_ObjectHideFlags: 0
