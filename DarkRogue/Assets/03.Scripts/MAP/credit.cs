@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class credit : MonoBehaviour
 {
+    // 애니메이션을 미리 만들어둔 프리팹을 담을 변수 
     public GameObject Endding;
     public GameObject light;
 
-    // Start is called before the first frame update
+    // 엔딩크리딧 애니메이션  실행 방지를 위해 한번 더 꺼져있다는 상태를 작성
     void Start()
     {
         Endding.SetActive(false);

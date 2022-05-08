@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public GameObject Keymap; // 키맵 패널
     public bool isOpen = false; // 키맵 열린지 확인
 
+
+    // 게임 시작시 1번 빌드씬으로 이동 전 버튼 효과음 재생 후 1.5초 뒤 전환
     public void Startgame()
     {
         
@@ -24,12 +26,14 @@ public class GameManager : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 
+    // UI 메뉴 버튼 시작화면으로 돌아오기
     public void HomeMenu()
     {
         SoundManager.sm.HomeBtnPlay();
         SceneManager.LoadScene(0);
-    }
+    }   
 
+    // 게임 종료 버튼 
     public void Exitgame()
     {
          Application.Quit();
@@ -56,6 +60,7 @@ public class GameManager : MonoBehaviour
         isPause = !isPause; // 메뉴 누를 때마다 상태가 반대로 바뀜
     } 
     
+    // 키맵 열기
     public void OnKeymap()
     {
         if (!isOpen)

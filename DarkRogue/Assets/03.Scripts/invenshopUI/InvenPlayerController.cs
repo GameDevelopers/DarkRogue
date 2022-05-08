@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+// NPC와 대화창 관리하는 스크립트
 public class InvenPlayerController : MonoBehaviour
 {
     // 말하는 중인지 확인
@@ -42,8 +44,8 @@ public class InvenPlayerController : MonoBehaviour
                     }
                     else
                     {
-                        if (DialogManager.instance.jump) DialogManager.instance.NextSentence();
-                        else DialogManager.instance.jump = true;
+                        if (DialogManager.instance.skip) DialogManager.instance.NextSentence();
+                        else DialogManager.instance.skip = true;
                         //DialogManager.instance.jump = true;
                     }
                     break;
