@@ -495,7 +495,7 @@ public class PlayerController : MonoBehaviour
 
         Vector2 detectDirection;
         detectDirection.x = 0;
-        detectDirection.y = -1;
+        detectDirection.y = 1;
 
         StartCoroutine(attackCoroutine(attackUpEffect, attackEffectLifeTime, attackInterval, detectDirection, attackUpRecoil));
     }
@@ -525,7 +525,7 @@ public class PlayerController : MonoBehaviour
 
         Vector2 detectDirection;
         detectDirection.x = 0;
-        detectDirection.y = 1;
+        detectDirection.y = -1;
 
         StartCoroutine(attackCoroutine(attackDownEffect, attackEffectLifeTime, attackInterval, detectDirection, attackDownRecoil));
     }
