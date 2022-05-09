@@ -20793,6 +20793,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 3360455883280533386, guid: 5108c30372cf8e54c9ab1f4ff0800146, type: 3}
+      propertyPath: maxCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360455883280533386, guid: 5108c30372cf8e54c9ab1f4ff0800146, type: 3}
+      propertyPath: spawnTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360455883280533386, guid: 5108c30372cf8e54c9ab1f4ff0800146, type: 3}
+      propertyPath: enemyCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3360455883280533387, guid: 5108c30372cf8e54c9ab1f4ff0800146, type: 3}
       propertyPath: m_RootOrder
       value: 7

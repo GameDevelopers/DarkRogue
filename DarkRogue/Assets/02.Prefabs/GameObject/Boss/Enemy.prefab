@@ -140,7 +140,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.037264466, y: -0.09316105}
+  m_Offset: {x: -0.054139376, y: -0.021343678}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -151,7 +151,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7373555, y: 1.8700911}
+  m_Size: {x: 2.102971, y: 2.0137258}
   m_EdgeRadius: 0
 --- !u!82 &6926513363765058367
 AudioSource:
@@ -279,7 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 173e97eaacd5e8648ba4cdf1dcd1f047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 3
+  hp: 1
   enemyDamage: 1
   moveDistance: 1
   speed: 1
