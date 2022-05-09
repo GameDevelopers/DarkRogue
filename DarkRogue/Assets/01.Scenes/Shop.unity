@@ -535,6 +535,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor3
       objectReference: {fileID: 0}
+    - target: {fileID: 4433732111779483305, guid: 0f5c95397c5ea7240802e9c98ba81d81, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6705719088064361708, guid: 0f5c95397c5ea7240802e9c98ba81d81, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -612,7 +616,7 @@ GameObject:
   m_Component:
   - component: {fileID: 886370900}
   - component: {fileID: 886370901}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -738,6 +742,10 @@ PrefabInstance:
     - target: {fileID: 2585251740166623253, guid: 465eda58725c4984d914f68f9f4e5571, type: 3}
       propertyPath: m_Name
       value: Portal1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2585251740166623253, guid: 465eda58725c4984d914f68f9f4e5571, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4620412136146249981, guid: 465eda58725c4984d914f68f9f4e5571, type: 3}
       propertyPath: PortalUI
@@ -1075,7 +1083,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 1503905605
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_TargetDisplay: 0
 --- !u!224 &1114828226
 RectTransform:
@@ -1326,6 +1334,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor3 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4433732111779483305, guid: 0f5c95397c5ea7240802e9c98ba81d81, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6705719088064361708, guid: 0f5c95397c5ea7240802e9c98ba81d81, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1532,7 +1544,7 @@ GameObject:
   - component: {fileID: 1723609305}
   - component: {fileID: 1723609308}
   - component: {fileID: 1723609307}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2791,6 +2803,10 @@ PrefabInstance:
     - target: {fileID: 3479811602454655475, guid: 9b63369b937e04841838bf9e9dced587, type: 3}
       propertyPath: m_Name
       value: Shop
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479811602454655475, guid: 9b63369b937e04841838bf9e9dced587, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3479811602454655485, guid: 9b63369b937e04841838bf9e9dced587, type: 3}
       propertyPath: m_RootOrder
