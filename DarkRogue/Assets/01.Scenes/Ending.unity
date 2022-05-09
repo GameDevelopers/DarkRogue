@@ -1323,9 +1323,13 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7304012053985379384, guid: d60663a6290f1dc49aab52b1b46b4792, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7304012054896682153, guid: d60663a6290f1dc49aab52b1b46b4792, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8091955218333169361, guid: d60663a6290f1dc49aab52b1b46b4792, type: 3}
       propertyPath: anim
@@ -1341,7 +1345,7 @@ PrefabInstance:
       objectReference: {fileID: 745423330}
     - target: {fileID: 8844374916551049396, guid: d60663a6290f1dc49aab52b1b46b4792, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: HomeMenu
+      value: EnddingMenu
       objectReference: {fileID: 0}
     - target: {fileID: 9119524649823764068, guid: d60663a6290f1dc49aab52b1b46b4792, type: 3}
       propertyPath: m_Color.a

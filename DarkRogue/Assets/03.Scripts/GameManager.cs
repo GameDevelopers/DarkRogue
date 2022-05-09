@@ -31,6 +31,10 @@ public class GameManager : MonoBehaviour
     {
         SoundManager.sm.HomeBtnPlay();
         SceneManager.LoadScene(0);
+    }  
+    public void EnddingMenu()
+    {
+        SceneManager.LoadScene(0);
     }   
 
     // 게임 종료 버튼 
