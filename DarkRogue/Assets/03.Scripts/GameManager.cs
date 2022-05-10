@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     IEnumerator SceneChange()
     {
         yield return new WaitForSeconds(1.5f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
     }
 
     // UI 메뉴 버튼 시작화면으로 돌아오기
