@@ -1184,6 +1184,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 949780706}
     - target: {fileID: 6374790457697664910, guid: d60663a6290f1dc49aab52b1b46b4792, type: 3}
+      propertyPath: wlight
+      value: 
+      objectReference: {fileID: 949780706}
+    - target: {fileID: 6374790457697664910, guid: d60663a6290f1dc49aab52b1b46b4792, type: 3}
       propertyPath: Endding
       value: 
       objectReference: {fileID: 108599348}
@@ -1339,6 +1343,10 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 1453299123}
+    - target: {fileID: 8091955218333169361, guid: d60663a6290f1dc49aab52b1b46b4792, type: 3}
+      propertyPath: wlight
+      value: 
+      objectReference: {fileID: 949780706}
     - target: {fileID: 8844374916551049396, guid: d60663a6290f1dc49aab52b1b46b4792, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: 0

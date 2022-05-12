@@ -8,11 +8,11 @@ public class NextSceneEnding : MonoBehaviour
 {
 	public Animator anim;
 	// 재생할 자식 요소 애니메이션 
-	public GameObject light;
+	public GameObject wlight;
 
 	void Start()
 	{
-		light.SetActive(false); // 빛 효과가 켜지는것 방지
+		wlight.SetActive(false); // 빛 효과가 켜지는것 방지
 	}
 
 
@@ -22,7 +22,7 @@ public class NextSceneEnding : MonoBehaviour
 		if (other.CompareTag("Player"))
 		{
 			// anim.SetTrigger("FadeIn");
-			light.SetActive(true);
+			wlight.SetActive(true);
 			//Invoke("Ending", 2);
 		}
 		
